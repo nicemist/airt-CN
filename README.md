@@ -13,13 +13,13 @@
 | # | 模块名称 | 核心技术覆盖点 / 主题 |
 |---|--------|--------|
 | 1 | AI 红队基础 | MITRE ATLAS 框架、OWASP LLM Top 10、威胁建模 |
-| 2 | 提示词注入攻击 <br>(Prompt Injection Attacks) | 直接/间接提示词注入、越狱 (Jailbreaks)、过滤器绕过 |
-| 3 | RAG 利用与向量数据库攻击<br/> (RAG Exploitation & Vector Database Attacks) | 知识库投毒 (Knowledge base poisoning)、嵌入向量攻击 (Embedding attacks) |
-| 4 | 多智能体系统利用 (Multi-Agent System Exploitation) | 智能体劫持 (Agent hijacking)、工具/插件滥用、内存投毒 |
-| 5 | AI 供应链与基础设施攻击<br/> (AI Supply Chain & Infrastructure Attacks) | 模型后门 (Model backdoors)、Pickle 反序列化漏洞利用、依赖项攻击 |
-| 6 | 模型提取与推理攻击<br/> (Model Extraction & Inference Attacks) | 模型窃取 (Model stealing)、成员推理攻击 (Membership inference)、侧信道攻击 |
-| 7 | 大规模自动化 AI 红队演练<br/> (Automated AI Red Teaming at Scale) | garak、PyRIT、promptfoo 工具链使用，以及 CI/CD 流程集成 |
-| 8 | 后渗透利用与影响分析<br/> (Post-Exploitation & Impact Analysis) | 横向移动 (Lateral movement)、报告编写、合规与监管框架 |
+| 2 | 提示词注入攻击 | 直接/间接提示词注入、越狱、过滤器绕过 |
+| 3 | RAG 利用与向量数据库攻击 | 知识库投毒 、嵌入向量攻击 |
+| 4 | 多智能体系统利用 | 智能体劫持 、工具/插件滥用、内存投毒 |
+| 5 | AI 供应链与基础设施攻击 | 模型后门 、Pickle 反序列化漏洞利用、依赖项攻击 |
+| 6 | 模型提取与推理攻击 | 模型窃取、成员推理攻击、侧信道攻击 |
+| 7 | 大规模自动化 AI 红队演练 | garak、PyRIT、promptfoo 工具链使用，以及 CI/CD 流程集成 |
+| 8 | 后渗透利用与影响分析 | 横向移动、报告编写、合规与监管框架 |
 
 ## 实操实验室
 
