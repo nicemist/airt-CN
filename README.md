@@ -1,51 +1,52 @@
-# AIRT — AI Red Team Academy
+> 本项目为 [AIRT](https://github.com/0x4D31/airt) (AI Red Team Academy) 的中文翻译版本。旨在为国内安全研究员与从业者提供系统性、纯实战的 AI 安全学习路径，沉淀并攻克 AI 系统红队评估、提示词注入、RAG 投毒以及大模型基础设施安全等前沿攻防技术。
+>
+> 原项目由 0x4D31 维护。
 
-A free, open-source course covering offensive security testing of AI systems — from prompt injection to supply chain attacks. 60+ hours of content with hands-on Docker labs.
+# AIRT-CN — AI 红队学院中文版
 
-🌐 **[View the course →](https://0x4d31.github.io/airt/)**
+这是一个免费且开源的课程，涵盖了针对 AI 系统的攻击性安全测试——从提示词注入到供应链攻击。包含 60 多个小时的高价值内容，并配备了基于 Docker 的本地实操实验室。
 
-## Modules
+🌐 **[查看课程详情 →](https://0x4d31.github.io/airt/)**
 
-| # | Module | Topics |
+## 课程模块
+
+| # | 模块名称 | 核心技术覆盖点 / 主题 |
 |---|--------|--------|
-| 1 | Foundations of AI Red Teaming | MITRE ATLAS, OWASP LLM Top 10, threat modeling |
-| 2 | Prompt Injection Attacks | Direct/indirect injection, jailbreaks, filter bypasses |
-| 3 | RAG Exploitation & Vector Database Attacks | Knowledge base poisoning, embedding attacks |
-| 4 | Multi-Agent System Exploitation | Agent hijacking, tool abuse, memory poisoning |
-| 5 | AI Supply Chain & Infrastructure Attacks | Model backdoors, pickle exploits, dependency attacks |
-| 6 | Model Extraction & Inference Attacks | Model stealing, membership inference, side channels |
-| 7 | Automated AI Red Teaming at Scale | garak, PyRIT, promptfoo, CI/CD integration |
-| 8 | Post-Exploitation & Impact Analysis | Lateral movement, reporting, regulatory frameworks |
+| 1 | AI 红队基础 | MITRE ATLAS 框架、OWASP LLM Top 10、威胁建模 |
+| 2 | 提示词注入攻击 <br>(Prompt Injection Attacks) | 直接/间接提示词注入、越狱 (Jailbreaks)、过滤器绕过 |
+| 3 | RAG 利用与向量数据库攻击<br/> (RAG Exploitation & Vector Database Attacks) | 知识库投毒 (Knowledge base poisoning)、嵌入向量攻击 (Embedding attacks) |
+| 4 | 多智能体系统利用 (Multi-Agent System Exploitation) | 智能体劫持 (Agent hijacking)、工具/插件滥用、内存投毒 |
+| 5 | AI 供应链与基础设施攻击<br/> (AI Supply Chain & Infrastructure Attacks) | 模型后门 (Model backdoors)、Pickle 反序列化漏洞利用、依赖项攻击 |
+| 6 | 模型提取与推理攻击<br/> (Model Extraction & Inference Attacks) | 模型窃取 (Model stealing)、成员推理攻击 (Membership inference)、侧信道攻击 |
+| 7 | 大规模自动化 AI 红队演练<br/> (Automated AI Red Teaming at Scale) | garak、PyRIT、promptfoo 工具链使用，以及 CI/CD 流程集成 |
+| 8 | 后渗透利用与影响分析<br/> (Post-Exploitation & Impact Analysis) | 横向移动 (Lateral movement)、报告编写、合规与监管框架 |
 
-## Hands-on Labs
+## 实操实验室
 
-Each module includes a Docker-based lab environment. No cloud API keys needed — everything runs locally via [Ollama](https://ollama.com/).
+每个模块都包含一个基于 Docker 的独立实验环境。**无需任何云端 API 密钥**——所有大模型均通过 [Ollama](https://ollama.com/) 在本地环境运行。
 
-### Quick Start
+### 快速开始
 
 ```bash
-# Clone the repo
-git clone https://github.com/0x4d31/airt.git
+# 克隆本项目仓库
+git clone https://github.com/nicemist/airt-CN
 cd airt/labs
 
-# Start any lab (e.g., Lab 01)
+# 启动任意实验室（以 Lab 01 为例）
 cd lab01-foundations
 docker compose up
 
-# Access the lab interface
-open http://localhost:8888
+# 访问本地实验交互界面
+http://localhost:8888
 ```
 
-### Prerequisites
+### 环境要求
 
-- [Docker](https://docs.docker.com/get-docker/) and Docker Compose
-- 8 GB+ RAM (16 GB recommended for Labs 07–08)
-- ~20 GB disk space for model downloads
+- 已安装 Docker
+- **内存**：8 GB+ RAM（运行实验 07–08 的大规模自动化工具时，推荐 16 GB）
+- **硬盘空间**：需预留约 20 GB 空间，用于下载本地开源大模型
 
 ## License
 
 Content is licensed under [CC BY-SA 4.0](https://creativecommons.org/licenses/by-sa/4.0/). Code and lab files are licensed under [MIT](LICENSE).
 
----
-
-Built with [Perplexity Computer](https://www.perplexity.ai/computer).
