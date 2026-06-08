@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en" data-theme="dark">
+<html lang="zh-CN" data-theme="dark">
 <head>
 <!--
    ______                            __
@@ -20,8 +20,8 @@
 
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Module 6: Model Extraction & Inference Attacks — AIRT Academy</title>
-<meta name="description" content="Module 6 of the AI Red Team Academy: Model Extraction & Inference Attacks. Free, open-source AI security education.">
+<title>模块 6：模型提取与推理攻击 — AIRT 学院</title>
+<meta name="description" content="AI 红队学院模块 6：模型提取与推理攻击。免费、开源的 AI 安全教育。">
 
 <!-- Fonts -->
 <link rel="preconnect" href="https://api.fontshare.com" crossorigin>
@@ -44,7 +44,7 @@
 <div class="reading-progress" id="readingProgress" aria-hidden="true"></div>
 
 <!-- Skip to content -->
-<a href="#module-content" class="skip-link">Skip to content</a>
+<a href="#module-content" class="skip-link">跳到内容</a>
 
 <!-- ============================================
      MODULE PAGE HEADER
@@ -52,7 +52,7 @@
 <header class="module-page-header" role="banner">
   <div class="module-page-header__inner">
     <div class="module-page-header__left">
-      <a href="./index.html" class="module-page-header__logo" aria-label="AIRT - AI Red Team Academy">
+      <a href="./index.html" class="module-page-header__logo" aria-label="AIRT - AI 红队学院">
         <svg width="28" height="28" viewBox="0 0 36 36" fill="none" aria-hidden="true">
           <path d="M18 2L4 8v10c0 9.5 6 16 14 18 8-2 14-8.5 14-18V8L18 2z" stroke="currentColor" stroke-width="1.5" fill="none"/>
           <line x1="12" y1="16" x2="24" y2="16" stroke="var(--color-primary)" stroke-width="1" opacity="0.6"/>
@@ -63,12 +63,12 @@
       </a>
       <a href="./index.html" class="module-page-header__back">
         <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="15 18 9 12 15 6"/></svg>
-        <span>Back to Course</span>
+        <span>返回课程</span>
       </a>
-      <span class="module-page-header__title">Module 6: Model Extraction & Inference Attacks</span>
+      <span class="module-page-header__title">模块 6：模型提取与推理攻击</span>
     </div>
     <div class="module-page-header__actions">
-      <button class="theme-toggle" data-theme-toggle aria-label="Switch to light mode">
+      <button class="theme-toggle" data-theme-toggle aria-label="切换到亮色模式">
         <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="5"/><path d="M12 1v2M12 21v2M4.22 4.22l1.42 1.42M18.36 18.36l1.42 1.42M1 12h2M21 12h2M4.22 19.78l1.42-1.42M18.36 5.64l1.42-1.42"/></svg>
       </button>
     </div>
@@ -81,30 +81,30 @@
 <main class="module-page-layout" id="module-content">
 
   <!-- Table of Contents Sidebar -->
-  <aside class="toc-sidebar" aria-label="Table of contents">
+  <aside class="toc-sidebar" aria-label="目录">
     <button class="toc-mobile-toggle" aria-expanded="false" aria-controls="toc-list">
       <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 12 15 18 9"/></svg>
-      Table of Contents
+      目录
     </button>
-    <div class="toc-sidebar__label">On this page</div>
+    <div class="toc-sidebar__label">本页内容</div>
     <ol class="toc-sidebar__list" id="toc-list">
-          <li><a href="#table-of-contents">Table of Contents</a></li>
-          <li><a href="#model-extraction-fundamentals">Model Extraction Fundamentals</a></li>
-          <li><a href="#query-based-model-stealing">Query-Based Model Stealing</a></li>
-          <li><a href="#training-data-extraction-from-llms">Training Data Extraction from LLMs</a></li>
-          <li><a href="#membership-inference">Membership Inference</a></li>
-          <li><a href="#attribute-inference">Attribute Inference</a></li>
-          <li><a href="#side-channel-attacks-on-llms-whisper-leak">Side-Channel Attacks on LLMs: Whisper Leak</a></li>
-          <li><a href="#token-length-side-channel">Token Length Side-Channel</a></li>
-          <li><a href="#timing-attacks-on-efficient-inference">Timing Attacks on Efficient Inference</a></li>
-          <li><a href="#tpuxtract-hardware-emanation-attacks">TPUXtract: Hardware Emanation Attacks</a></li>
-          <li><a href="#model-inversion">Model Inversion</a></li>
-          <li><a href="#defense-rate-limiting">Defense: Rate Limiting</a></li>
-          <li><a href="#defense-output-perturbation">Defense: Output Perturbation</a></li>
-          <li><a href="#defense-model-watermarking">Defense: Model Watermarking</a></li>
-          <li><a href="#api-monitoring-for-extraction-attempts">API Monitoring for Extraction Attempts</a></li>
-          <li><a href="#differential-privacy">Differential Privacy</a></li>
-          <li><a href="#module-summary">Module Summary</a></li>
+          <li><a href="#table-of-contents">目录</a></li>
+          <li><a href="#model-extraction-fundamentals">模型提取基础</a></li>
+          <li><a href="#query-based-model-stealing">基于查询的模型窃取</a></li>
+          <li><a href="#training-data-extraction-from-llms">从 LLM 中提取训练数据</a></li>
+          <li><a href="#membership-inference">成员推理</a></li>
+          <li><a href="#attribute-inference">属性推理</a></li>
+          <li><a href="#side-channel-attacks-on-llms-whisper-leak">针对 LLM 的侧信道攻击：Whisper Leak</a></li>
+          <li><a href="#token-length-side-channel">令牌长度侧信道</a></li>
+          <li><a href="#timing-attacks-on-efficient-inference">针对高效推理的时序攻击</a></li>
+          <li><a href="#tpuxtract-hardware-emanation-attacks">TPUXtract：硬件辐射攻击</a></li>
+          <li><a href="#model-inversion">模型反演</a></li>
+          <li><a href="#defense-rate-limiting">防御：速率限制</a></li>
+          <li><a href="#defense-output-perturbation">防御：输出扰动</a></li>
+          <li><a href="#defense-model-watermarking">防御：模型水印</a></li>
+          <li><a href="#api-monitoring-for-extraction-attempts">针对提取尝试的 API 监控</a></li>
+          <li><a href="#differential-privacy">差分隐私</a></li>
+          <li><a href="#module-summary">模块总结</a></li>
     </ol>
   </aside>
 
@@ -112,16 +112,16 @@
   <article class="module-content-wrapper">
     <!-- Module Meta -->
     <div class="module-meta">
-      <div class="module-meta__badge">Module 06</div>
-      <h1 class="module-meta__title">Model Extraction & Inference Attacks</h1>
+      <div class="module-meta__badge">模块 06</div>
+      <h1 class="module-meta__title">模型提取与推理攻击</h1>
       <div class="module-meta__info">
         <span>
           <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
-          46 min read
+          46 分钟阅读
         </span>
         <span>
           <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/></svg>
-          10,418 words
+          10,418 字
         </span>
       </div>
     </div>
@@ -132,125 +132,125 @@
 
   <!-- ══════════════════════════════════════════════════════ HEADER ══ -->
   <header class="module-header">
-    <div class="module-badge">AI Security Course</div>
-    <h1>Module 6: Model Extraction and Inference Attacks</h1>
+    <div class="module-badge">AI 安全课程</div>
+    <h1>模块 6：模型提取与推理攻击</h1>
     <p class="subtitle">
-      How adversaries steal proprietary models, reconstruct training data, infer membership,
-      and exploit encrypted network traffic — and the defenses that resist them.
+      攻击者如何窃取专有模型、重建训练数据、推断成员身份、
+      以及利用加密网络流量 — 以及抵御这些攻击的防御措施。
     </p>
     <div class="module-meta">
-      <span class="meta-pill">⏱ 90-minute read</span>
-      <span class="meta-pill">🔬 15 Topics</span>
-      <span class="meta-pill">💻 14 Code Examples</span>
-      <span class="meta-pill">🎓 Advanced</span>
+      <span class="meta-pill">⏱ 90 分钟阅读</span>
+      <span class="meta-pill">🔬 15 个主题</span>
+      <span class="meta-pill">💻 14 个代码示例</span>
+      <span class="meta-pill">🎓 高级</span>
     </div>
   </header>
 
   <!-- ══════════════════════════════════════════════════════════ TOC ══ -->
   <nav class="toc">
-    <h2 id="table-of-contents">Table of Contents</h2>
+    <h2 id="table-of-contents">目录</h2>
     <ol>
-      <li><a href="#s1">Model Extraction Fundamentals</a></li>
-      <li><a href="#s2">Query-Based Model Stealing</a></li>
-      <li><a href="#s3">Training Data Extraction from LLMs</a></li>
-      <li><a href="#s4">Membership Inference</a></li>
-      <li><a href="#s5">Attribute Inference</a></li>
-      <li><a href="#s6">Side-Channel Attacks on LLMs: Whisper Leak</a></li>
-      <li><a href="#s7">Token Length Side-Channel</a></li>
-      <li><a href="#s8">Timing Attacks on Efficient Inference</a></li>
-      <li><a href="#s9">TPUXtract: Hardware Emanation Attacks</a></li>
-      <li><a href="#s10">Model Inversion</a></li>
-      <li><a href="#s11">Defense: Rate Limiting</a></li>
-      <li><a href="#s12">Defense: Output Perturbation</a></li>
-      <li><a href="#s13">Defense: Model Watermarking</a></li>
-      <li><a href="#s14">API Monitoring for Extraction Attempts</a></li>
-      <li><a href="#s15">Differential Privacy</a></li>
+      <li><a href="#s1">模型提取基础</a></li>
+      <li><a href="#s2">基于查询的模型窃取</a></li>
+      <li><a href="#s3">从 LLM 中提取训练数据</a></li>
+      <li><a href="#s4">成员推理</a></li>
+      <li><a href="#s5">属性推理</a></li>
+      <li><a href="#s6">针对 LLM 的侧信道攻击：Whisper Leak</a></li>
+      <li><a href="#s7">令牌长度侧信道</a></li>
+      <li><a href="#s8">针对高效推理的时序攻击</a></li>
+      <li><a href="#s9">TPUXtract：硬件辐射攻击</a></li>
+      <li><a href="#s10">模型反演</a></li>
+      <li><a href="#s11">防御：速率限制</a></li>
+      <li><a href="#s12">防御：输出扰动</a></li>
+      <li><a href="#s13">防御：模型水印</a></li>
+      <li><a href="#s14">针对提取尝试的 API 监控</a></li>
+      <li><a href="#s15">差分隐私</a></li>
     </ol>
   </nav>
 
   <!-- ═══════════════════════════════════════════════════════ SECTION 1 ══ -->
   <section class="section" id="s1">
     <span class="section-number">01</span>
-    <h2 id="model-extraction-fundamentals">Model Extraction Fundamentals</h2>
+    <h2 id="model-extraction-fundamentals">模型提取基础</h2>
 
     <p>
-      A machine learning model is intellectual property. It encodes years of domain expertise,
-      millions of labeled training examples, substantial compute investment, and proprietary
-      architectural choices refined through exhaustive experimentation. Training GPT-4-class
-      models reportedly costs tens to hundreds of millions of dollars in compute alone —
-      a figure that does not capture the human expertise spent curating training data, tuning
-      hyperparameters, or performing alignment work. <em>Model extraction</em>, also called
-      <em>model stealing</em>, is the practice of cloning a proprietary model's behavior by
-      querying its public-facing API and training a surrogate model on the query-response pairs.
-      The result: an adversary can obtain a functional equivalent of the target model for a
-      fraction of its original training cost.
+      机器学习模型是知识产权。它编码了多年的领域专业知识、
+      数百万个标注训练样本、大量的计算投资以及通过
+      详尽实验优化出的专有架构选择。训练 GPT-4 级别的
+      模型据报告仅计算成本就高达数千万到数亿美元 —
+      这还不包括花费在整理训练数据、调整超参数
+      或执行对齐工作上的人类专业知识。<em>模型提取</em>，也称作
+      <em>模型窃取</em>，是通过查询目标模型的公开 API
+      并在查询-响应对上训练代理模型来克隆专有模型行为的实践。
+      结果是：攻击者能够以原始训练成本的一小部分
+      获得目标模型的功能等价物。
     </p>
 
     <div class="callout callout-danger">
-      <strong>Economic Stakes</strong>
-      Training large-scale commercial models may cost $10M–$100M in compute. A successful
-      model extraction attack can replicate core capabilities for as little as a few thousand
-      dollars in API query costs — a six-orders-of-magnitude asymmetry.
+      <strong>经济风险</strong>
+      训练大规模商业模型的计算成本可能高达 1000 万至 1 亿美元。成功的
+      模型提取攻击只需数千美元的 API 查询成本即可复制核心能力 —
+      这是高达六个数量级的不对称性。
     </div>
 
-    <h3>Why Model Extraction Matters</h3>
+    <h3>模型提取为何重要</h3>
     <p>
-      The motivations for attacking a model's intellectual property are diverse and often compound.
-      First, there is straightforward <strong>IP theft</strong>: a competitor can extract a
-      production model and deploy it as their own product, bypassing the original developer's
-      licensing fees, terms of service, and competitive moat. Second, a stolen surrogate model
-      can serve as a <strong>stepping stone for further attacks</strong>. Generating adversarial
-      examples is far easier when you have white-box access to model gradients. By extracting a
-      surrogate first, an attacker converts a black-box problem into a white-box one, making
-      downstream adversarial attacks orders of magnitude more effective. Third, extraction can
-      be used to <strong>circumvent rate limits and cost controls</strong>: once you own a local
-      copy, you can run inference without per-query charges or usage monitoring.
+      攻击模型知识产权的动机多种多样且通常相互叠加。
+      首先是直接的<strong>知识产权盗窃</strong>：竞争对手可以提取
+      生产模型并将其部署为自己的产品，绕过原始开发者的
+      许可费用、服务条款和竞争护城河。其次，被盗的代理模型
+      可以作为<strong>进一步攻击的垫脚石</strong>。当你拥有对模型梯度的白盒访问权限时，
+      生成对抗样本要容易得多。通过首先提取
+      代理模型，攻击者将黑盒问题转化为白盒问题，使
+      下游对抗攻击的效果提升数个数量级。第三，提取可以
+      用于<strong>绕过速率限制和成本控制</strong>：一旦你拥有本地
+      副本，你就可以在没有每次查询费用或使用监控的情况下运行推理。
     </p>
 
     <p>
-      Finally, and perhaps most alarmingly, extraction enables <strong>privacy inference</strong>.
-      A model trained on sensitive data (medical records, financial histories, private communications)
-      may leak information about its training set even when accessed only through its API.
-      Extraction gives the adversary a persistent local artifact to probe at leisure, without
-      the audit trails that API providers maintain.
+      最后，也许最令人担忧的是，提取实现了<strong>隐私推理</strong>。
+      在敏感数据（医疗记录、财务历史、私人通信）上训练的模型
+      即使仅通过 API 访问也可能泄露其训练集的信息。
+      提取为攻击者提供了一个持久的本地工件，可以随时探查，
+      而无需面对 API 提供商维护的审计跟踪。
     </p>
 
-    <h3>Exact Extraction vs. Functional Equivalence</h3>
+    <h3>精确提取与功能等价</h3>
     <p>
-      Two distinct goals exist within model extraction. <strong>Exact extraction</strong> attempts
-      to recover the precise weights and architecture of the target model, reproducing its behavior
-      on every possible input — including corner cases. This is theoretically possible for simple
-      model classes (e.g., small ReLU networks) where the number of queries needed to uniquely
-      determine weights grows polynomially with model size, but it remains computationally
-      intractable for modern billion-parameter LLMs.
+      模型提取中存在两个不同的目标。<strong>精确提取</strong>试图
+      恢复目标模型的精确权重和架构，在每一个可能的输入上
+      重现其行为 — 包括边缘情况。这对于简单模型类别在理论上是可行的
+      （例如，小型 ReLU 网络），其中唯一确定权重所需的查询数量
+      随模型大小呈多项式增长，但对于现代数十亿参数的 LLM 来说，
+      这在计算上仍然是难以处理的。
     </p>
     <p>
-      <strong>Functional equivalence</strong>, by contrast, settles for a surrogate that matches
-      the target model's behavior on a task-relevant input distribution. The surrogate need not
-      share the target's architecture or weights; it only needs to produce similar predictions
-      on the inputs the attacker cares about. This is the practically relevant threat for most
-      commercial deployments and requires far fewer queries than exact extraction. Research has
-      demonstrated functional equivalents of commercial NLP models achievable with a few hundred
-      thousand API calls — well within the budget of a well-funded adversary.
+      <strong>功能等价</strong>则满足于一个在任务相关的输入分布上
+      匹配目标模型行为的代理模型。代理模型不需要
+      共享目标的架构或权重；它只需要在攻击者关心的输入上
+      产生类似的预测。这是大多数商业部署中实际相关的威胁，
+      并且需要的查询远少于精确提取。研究已经
+      证明可以通过几十万次 API 调用实现商业 NLP 模型的功能等价物 —
+      这完全在资金充足的攻击者的预算之内。
       <a class="cite" href="https://arxiv.org/abs/1811.01820" title="Tramèr et al., Stealing Machine Learning Models via Prediction APIs">[Tramèr et al.]</a>
     </p>
 
     <div class="concept-grid">
       <div class="concept-card">
-        <h4>Attack Goal</h4>
-        <p>Clone model behavior without access to weights or architecture.</p>
+        <h4>攻击目标</h4>
+        <p>在无权访问权重或架构的情况下克隆模型行为。</p>
       </div>
       <div class="concept-card">
-        <h4>Attack Surface</h4>
-        <p>Any public prediction API that returns labels or probability scores.</p>
+        <h4>攻击面</h4>
+        <p>任何返回标签或概率分数的公开预测 API。</p>
       </div>
       <div class="concept-card">
-        <h4>Attacker Cost</h4>
-        <p>API query fees + surrogate training compute (typically 100–10,000× cheaper than original).</p>
+        <h4>攻击者成本</h4>
+        <p>API 查询费用 + 代理训练计算（通常比原始便宜 100–10,000 倍）。</p>
       </div>
       <div class="concept-card">
-        <h4>Victim Loss</h4>
-        <p>Revenue, competitive advantage, downstream privacy risks for training subjects.</p>
+        <h4>受害者损失</h4>
+        <p>收入、竞争优势、训练数据主体的下游隐私风险。</p>
       </div>
     </div>
   </section>
@@ -258,51 +258,51 @@
   <!-- ═══════════════════════════════════════════════════════ SECTION 2 ══ -->
   <section class="section" id="s2">
     <span class="section-number">02</span>
-    <h2 id="query-based-model-stealing">Query-Based Model Stealing</h2>
+    <h2 id="query-based-model-stealing">基于查询的模型窃取</h2>
 
     <p>
-      The canonical model stealing attack unfolds in three phases: systematic querying of the
-      target API, accumulation of a query-response dataset, and training a surrogate model on
-      that dataset. The simplicity of this pipeline belies its effectiveness. Modern research
-      has shown that even a surrogate with a different architecture than the target can achieve
-      near-identical task performance when trained on well-selected query-response pairs.
+      典型的模型窃取攻击分为三个阶段：系统性地查询
+      目标 API、积累查询-响应数据集、以及在该数据集上训练代理模型。
+      这个流程的简单性掩盖了其有效性。现代研究
+      表明，即使架构与目标不同的代理模型，在精心选择的
+      查询-响应对上训练后，也能实现几乎相同的任务性能。
       <a class="cite" href="https://arxiv.org/abs/1811.01820">[Tramèr et al.]</a>
     </p>
 
-    <h3>Query Strategy: Active Learning for Efficiency</h3>
+    <h3>查询策略：主动学习提高效率</h3>
     <p>
-      A naive attacker might sample inputs uniformly at random. A sophisticated attacker uses
-      <strong>active learning</strong> to select queries that maximize information gain. The
-      core insight is that not all inputs are equally informative: points near the model's
-      decision boundary carry far more information about the model's function than points
-      firmly in one class region. Active learning heuristics (uncertainty sampling, query by
-      committee, core-set selection) allow an attacker to build an accurate surrogate in
-      significantly fewer queries — sometimes an order of magnitude fewer than uniform sampling.
+      天真的攻击者可能会均匀随机采样输入。老练的攻击者使用
+      <strong>主动学习</strong>来选择最大化信息增益的查询。其
+      核心洞察是并非所有输入都具有相同的信息量：靠近模型
+      决策边界的点所携带的关于模型函数的信息远多于
+      稳固位于某一类别区域的点。主动学习启发式方法（不确定性采样、查询委员会、
+      核心集选择）使得攻击者能够用显著更少的查询
+      构建精确的代理模型 — 有时比均匀采样少一个数量级。
     </p>
 
     <p>
-      The attacker begins with a seed set of unlabeled inputs, queries the target, and then
-      selects the next query batch by asking: "which inputs, if labeled, would most reduce
-      the surrogate's uncertainty?" The surrogate is retrained after each batch, and the
-      process repeats. This closed loop is why model stealing can be devastatingly efficient
-      even against APIs that return only hard labels (no probabilities): even binary
-      membership information progressively constrains the surrogate.
+      攻击者从一组种子未标记输入开始，查询目标，然后
+      通过询问"哪些输入，如果被标注，会最大程度地降低
+      代理模型的不确定性？"来选择下一批查询。代理模型在每批之后重新训练，
+      过程重复进行。这种闭环就是为什么模型窃取
+      即使针对仅返回硬标签（无概率）的 API 也能极其有效：
+      即使是二元的成员信息也会逐步约束代理模型。
     </p>
 
-    <h3>Training the Surrogate</h3>
+    <h3>训练代理模型</h3>
     <p>
-      Once a sufficient set of (input, target_response) pairs has been accumulated, the
-      attacker trains a surrogate model — which need not share the target's architecture —
-      to minimize the loss on those pairs. Soft labels (probability distributions) are
-      far more information-rich than hard labels: a prediction of
-      <code>[cat: 0.72, dog: 0.25, fox: 0.03]</code> conveys the target model's confidence
-      geometry near that input, whereas a hard label <code>cat</code> discards the relative
-      scores. Where APIs return confidence scores, the attacker should use them as training
-      targets (knowledge distillation). Where only hard labels are available, temperature
-      scaling and label smoothing on the surrogate side partially compensate.
+      一旦积累了足够数量的（输入，目标响应）对，
+      攻击者训练一个代理模型 — 不需要与目标共享架构 —
+      以最小化这些对上的损失。软标签（概率分布）
+      的信息量远大于硬标签：预测
+      <code>[cat: 0.72, dog: 0.25, fox: 0.03]</code> 传达了目标模型在该输入附近的置信度
+      几何结构，而硬标签 <code>cat</code> 则丢弃了相对
+      分数。当 API 返回置信度分数时，攻击者应将其用作训练
+      目标（知识蒸馏）。当只有硬标签可用时，代理模型侧的
+      温度缩放和标签平滑可以部分补偿。
     </p>
 
-    <h3>Working Implementation</h3>
+    <h3>工作实现</h3>
 
 <pre><code><span class="kw">import</span> numpy <span class="kw">as</span> np
 <span class="kw">import</span> requests
@@ -313,8 +313,8 @@
 
 <span class="kw">class</span> <span class="nm">ModelExtractor</span>:
     <span class="st">"""
-    Black-box model extraction via active-learning-guided query selection.
-    Trains a local surrogate MLPClassifier to mimic a remote target API.
+    通过主动学习引导的查询选择进行黑盒模型提取。
+    训练本地代理 MLPClassifier 来模拟远程目标 API。
     """</span>
 
     <span class="kw">def</span> <span class="fn">__init__</span>(self, target_api_url, n_classes=<span class="nb">2</span>, query_budget=<span class="nb">5000</span>):
@@ -322,10 +322,10 @@
         self.n_classes = n_classes
         self.query_budget = query_budget
 
-        self.queries   = []   <span class="cm"># List[np.ndarray] — inputs sent to target</span>
-        self.responses = []   <span class="cm"># List[int or list] — labels/probabilities returned</span>
+        self.queries   = []   <span class="cm"># List[np.ndarray] — 发送给目标的输入</span>
+        self.responses = []   <span class="cm"># List[int or list] — 返回的标签/概率</span>
 
-        <span class="cm"># Surrogate architecture: two hidden layers</span>
+        <span class="cm"># 代理模型架构：两个隐藏层</span>
         self.surrogate = MLPClassifier(
             hidden_layer_sizes=(<span class="nb">100</span>, <span class="nb">50</span>),
             activation=<span class="st">'relu'</span>,
@@ -336,7 +336,7 @@
         self._fitted = <span class="kw">False</span>
 
     <span class="kw">def</span> <span class="fn">query_target</span>(self, inputs):
-        <span class="st">"""Send inputs to the target API and record (input, response) pairs."""</span>
+        <span class="st">"""将输入发送到目标 API 并记录（输入，响应）对。"""</span>
         <span class="kw">for</span> x <span class="kw">in</span> inputs:
             <span class="kw">try</span>:
                 resp = requests.post(
@@ -347,7 +347,7 @@
                 resp.raise_for_status()
                 data = resp.json()
 
-                <span class="cm"># Accept either {"prediction": 1} or {"probabilities": [0.3, 0.7]}</span>
+                <span class="cm"># 接受 {"prediction": 1} 或 {"probabilities": [0.3, 0.7]} 格式</span>
                 label = data.get(<span class="st">"prediction"</span>, np.argmax(data.get(<span class="st">"probabilities"</span>, [<span class="nb">0</span>])))
                 self.queries.append(x)
                 self.responses.append(label)
@@ -356,7 +356,7 @@
                 <span class="kw">print</span>(<span class="st">f"Query failed: {e}"</span>)
 
     <span class="kw">def</span> <span class="fn">train_surrogate</span>(self):
-        <span class="st">"""Fit the surrogate on all accumulated (query, response) pairs."""</span>
+        <span class="st">"""在所有累积的（查询，响应）对上拟合代理模型。"""</span>
         X = np.array(self.queries)
         y = np.array(self.responses)
 
@@ -369,53 +369,53 @@
 
     <span class="kw">def</span> <span class="fn">select_uncertain_batch</span>(self, candidate_pool, batch_size=<span class="nb">100</span>):
         <span class="st">"""
-        Active learning: pick the batch_size candidates where the surrogate
-        is most uncertain (highest entropy over class probabilities).
-        Requires surrogate to be trained at least once.
+        主动学习：选择代理模型最不确定的 batch_size 个候选样本
+        （在类别概率上熵最高）。
+        要求代理模型至少训练过一次。
         """</span>
         <span class="kw">if not</span> self._fitted:
-            <span class="cm"># Cold start — return random batch</span>
+            <span class="cm"># 冷启动 — 返回随机批次</span>
             idx = np.random.choice(len(candidate_pool), batch_size, replace=<span class="kw">False</span>)
             <span class="kw">return</span> candidate_pool[idx]
 
         X_scaled = self.scaler.transform(candidate_pool)
         proba = self.surrogate.predict_proba(X_scaled)          <span class="cm"># (N, n_classes)</span>
-        uncertainties = np.array([entropy(p) <span class="kw">for</span> p <span class="kw">in</span> proba])   <span class="cm"># Shannon entropy</span>
+        uncertainties = np.array([entropy(p) <span class="kw">for</span> p <span class="kw">in</span> proba])   <span class="cm"># 香农熵</span>
 
-        <span class="cm"># Select top-k most uncertain samples</span>
+        <span class="cm"># 选择最不确定的前 k 个样本</span>
         top_idx = np.argsort(uncertainties)[-batch_size:]
         <span class="kw">return</span> candidate_pool[top_idx]
 
     <span class="kw">def</span> <span class="fn">run_extraction</span>(self, input_domain_sampler, batch_size=<span class="nb">100</span>):
         <span class="st">"""
-        Full extraction loop.
+        完整提取循环。
         input_domain_sampler: callable() -> np.ndarray of shape (N, d)
         """</span>
         rounds = self.query_budget <span class="nb">// batch_size</span>
 
         <span class="kw">for</span> round_i <span class="kw">in</span> range(rounds):
-            <span class="cm"># 1. Sample a large candidate pool from the input domain</span>
+            <span class="cm"># 1. 从输入域中采样大量候选池</span>
             candidates = input_domain_sampler()
 
-            <span class="cm"># 2. Use active learning to pick the most informative batch</span>
+            <span class="cm"># 2. 使用主动学习选择信息量最大的批次</span>
             batch = self.select_uncertain_batch(candidates, batch_size)
 
-            <span class="cm"># 3. Query the target API</span>
+            <span class="cm"># 3. 查询目标 API</span>
             self.query_target(batch)
 
-            <span class="cm"># 4. Retrain surrogate on all data so far</span>
-            <span class="kw">if</span> len(self.queries) >= <span class="nb">200</span>:  <span class="cm"># Minimum for meaningful training</span>
+            <span class="cm"># 4. 在所有已有数据上重新训练代理模型</span>
+            <span class="kw">if</span> len(self.queries) >= <span class="nb">200</span>:  <span class="cm"># 有意义训练的最低数量</span>
                 acc = self.train_surrogate()
                 <span class="kw">print</span>(<span class="st">f"Round {round_i+1}: {len(self.queries)} queries, surrogate accuracy={acc:.3f}"</span>)
 
         <span class="kw">return</span> self.surrogate
 
 
-<span class="cm"># ── Example usage ──────────────────────────────────────────────────────</span>
-<span class="cm"># Suppose the target model classifies 20-dimensional input vectors</span>
+<span class="cm"># ── 使用示例 ────────────────────────────────────────────────────────────</span>
+<span class="cm"># 假设目标模型分类 20 维输入向量</span>
 
 <span class="kw">def</span> <span class="fn">domain_sampler</span>():
-    <span class="st">"""Returns 500 random candidates from input domain."""</span>
+    <span class="st">"""从输入域返回 500 个随机候选样本。"""</span>
     <span class="kw">return</span> np.random.uniform(-<span class="nb">1</span>, <span class="nb">1</span>, size=(<span class="nb">500</span>, <span class="nb">20</span>)).astype(np.float32)
 
 extractor = ModelExtractor(
@@ -429,22 +429,22 @@ surrogate_model = extractor.run_extraction(domain_sampler, batch_size=<span clas
 </code></pre>
 
     <div class="callout callout-info">
-      <strong>Note</strong>
-      The above code targets a generic classification API. Real-world attacks against
-      LLM APIs use text prompts as "queries" and logprob distributions (when available)
-      as labels, then distill the results into a smaller surrogate transformer.
+      <strong>注意</strong>
+      上述代码针对通用分类 API。针对 LLM API 的实际攻击
+      使用文本提示作为"查询"，并使用 logprob 分布（当可用时）
+      作为标签，然后将结果蒸馏到更小的代理 Transformer 中。
     </div>
 
-    <h3>Optimizing for Maximum Information Gain</h3>
+    <h3>优化以最大化信息增益</h3>
     <p>
-      Beyond uncertainty sampling, attackers can exploit several additional strategies.
-      <strong>Jacobian-based data augmentation</strong> (JBDA) synthesizes new training points
-      by applying small gradient steps to existing labeled inputs, generating inputs near decision
-      boundaries without additional API calls. <strong>Model-free approaches</strong> use
-      generative models to synthesize diverse inputs from scratch. For NLP models,
-      <strong>prompt chaining</strong> — where the attacker systematically varies one linguistic
-      dimension at a time — allows efficient coverage of the response surface with structured
-      query sets.
+      除了不确定性采样，攻击者还可以利用几种额外的策略。
+      <strong>基于雅可比的数据增强</strong>（JBDA）通过对现有已标记输入
+      应用小梯度步长来合成新的训练点，
+      无需额外 API 调用即可生成靠近决策边界的输入。
+      <strong>无模型方法</strong>使用
+      生成模型从头合成多样化的输入。对于 NLP 模型，
+      <strong>提示链接</strong> — 攻击者每步系统地改变一个语言维度 —
+      允许通过结构化的查询集高效覆盖响应空间。
       <a class="cite" href="https://arxiv.org/abs/1602.02697" title="Papernot et al., Practical Black-Box Attacks against Machine Learning">[Papernot et al.]</a>
     </p>
   </section>
@@ -452,73 +452,73 @@ surrogate_model = extractor.run_extraction(domain_sampler, batch_size=<span clas
   <!-- ═══════════════════════════════════════════════════════ SECTION 3 ══ -->
   <section class="section" id="s3">
     <span class="section-number">03</span>
-    <h2 id="training-data-extraction-from-llms">Training Data Extraction from LLMs</h2>
+    <h2 id="training-data-extraction-from-llms">从 LLM 中提取训练数据</h2>
 
     <p>
-      Large language models are, in a precise technical sense, compressed summaries of their
-      training corpora. They learn statistical regularities — everything from spelling patterns
-      to full verbatim passages — and store this knowledge in their billions of parameters.
-      This creates a vulnerability: a sufficiently precise attacker can cause a model to
-      <em>regurgitate</em> verbatim text that appeared in its training set. The landmark
-      research by <strong>Carlini et al. (2021)</strong> demonstrated this decisively
-      against GPT-2, extracting hundreds of verbatim training examples including full
-      names, physical addresses, phone numbers, and copyrighted text simply by querying
-      the model's public API.
+      大型语言模型，从精确的技术意义上讲，是其训练语料库的压缩摘要。
+      它们学习统计规律 — 从拼写模式
+      到完整的逐字段落 — 并将这些知识存储在其数十亿的参数中。
+      这形成了一个漏洞：一个足够精确的攻击者可以导致模型
+      <em>反刍</em>出现在其训练集中的逐字文本。由
+      <strong>Carlini et al. (2021)</strong> 进行的里程碑式研究
+      针对 GPT-2 明确证明了这一点，仅通过查询模型的公共 API
+      就提取了数百个逐字训练示例，包括完整的
+      姓名、物理地址、电话号码和受版权保护的文本。
       <a class="cite" href="https://arxiv.org/abs/2012.07805">[Carlini et al., USENIX Security 2021]</a>
     </p>
 
-    <h3>Why LLMs Memorize Training Data</h3>
+    <h3>LLM 为何记住训练数据</h3>
     <p>
-      Memorization arises from a combination of factors. Training data that is <strong>duplicated
-      many times</strong> in the corpus is more likely to be memorized — GPT-2 memorizes
-      entire MIT license texts because they appear verbatim on hundreds of thousands of
-      GitHub repositories. <strong>Model capacity</strong> amplifies this: larger models
-      memorize more, because they have more parameters to store rare training examples.
-      Counterintuitively, <strong>longer training</strong> (more epochs) also increases
-      memorization, as the model sees the same examples repeatedly and fits them more precisely.
+      记忆源于多种因素的组合。在语料库中<strong>重复多次</strong>
+      的训练数据更容易被记住 — GPT-2 记住了
+      完整的 MIT 许可证文本，因为它们逐字出现在数十万个
+      GitHub 仓库中。<strong>模型容量</strong>放大了这一点：更大的模型
+      记住更多，因为它们有更多参数来存储稀有的训练样本。
+      反直觉的是，<strong>更长的训练</strong>（更多的 epoch）也会增加
+      记忆，因为模型反复看到相同的样本并更精确地拟合它们。
     </p>
     <p>
-      Carlini et al. define <em>k-eidetic memorization</em>: a string <em>s</em> is
-      k-eidetically memorized by a model if the model can reproduce <em>s</em> from a
-      length-<em>k</em> prefix, and <em>s</em> appears in the training data only once.
-      This is distinct from factual knowledge (which may be learned from many corroborating
-      examples) — eidetic memorization is verbatim retention from a single training example.
-    </p>
-
-    <h3>Extraction Methodology</h3>
-    <p>
-      The attack pipeline involves three steps: generation, ranking, and verification.
-      First, the attacker generates a large number of text samples from the model — Carlini
-      et al. generated 600,000 samples using diverse prompting strategies. Second, they rank
-      these samples using <strong>membership inference metrics</strong> as a filter: samples
-      where the model assigns unusually high likelihood are more likely to be memorized.
-      Specifically, they compare the model's perplexity on a candidate to a smaller reference
-      model's perplexity. Memorized text is high-likelihood for the large model but not for
-      the reference model. Third, the top-ranked candidates are verified against the original
-      training corpus.
+      Carlini et al. 定义了 <em>k-遗觉记忆</em>：如果一个模型能够从长度为 <em>k</em> 的
+      前缀重现字符串 <em>s</em>，且 <em>s</em> 在训练数据中只出现过一次，
+      则字符串 <em>s</em> 被模型 k-遗觉式地记住了。
+      这区别于事实性知识（可能从许多相互印证的
+      示例中学习）— 遗觉记忆是来自单个训练样本的逐字保留。
     </p>
 
-    <h3>Divergence and Prefix Attacks</h3>
+    <h3>提取方法论</h3>
     <p>
-      <strong>Divergence attacks</strong> exploit the phenomenon that a model fine-tuned
-      with RLHF or instruction tuning will suppress memorization outputs during normal
-      use, but can be induced to "forget" this suppression by crafting adversarial prompts.
-      Carlini et al. (2023) extracted megabytes of training data from ChatGPT — despite
-      its alignment training — by using a simple repetition prompt: asking the model to
-      repeat a word indefinitely causes it to eventually diverge from its aligned behavior
-      and emit training data verbatim.
-      <a class="cite" href="https://not-just-memorization.github.io/extracting-training-data-from-chatgpt.html">[Carlini et al., 2023 — ChatGPT Extraction]</a>
-    </p>
-    <p>
-      <strong>Prefix attacks</strong> provide the model with a genuine prefix from the
-      training data and observe whether it completes the rest of the passage accurately.
-      Prompting GPT-2 with "My address is 1 Main Street" caused it to accurately complete
-      with specific real individuals' contact information in the Carlini et al. experiments.
-      <strong>Completion-based extraction</strong> is the general technique: any prompt
-      that was seen during training acts as a retrieval key for the passage that followed it.
+      攻击流程包括三个步骤：生成、排序和验证。
+      首先，攻击者从模型生成大量文本样本 — Carlini
+      et al. 使用多样化的提示策略生成了 600,000 个样本。其次，他们使用
+      <strong>成员推理指标</strong>作为过滤器对这些样本进行排序：
+      模型分配异常高似然的样本更有可能被记住。
+      具体来说，他们将模型在候选文本上的困惑度与较小的参考
+      模型的困惑度进行比较。被记住的文本对于大模型具有高似然，
+      但对参考模型则不然。第三，排名靠前的候选者与原始
+      训练语料库进行验证。
     </p>
 
-    <h3>Testing for Memorization</h3>
+    <h3>发散攻击和前缀攻击</h3>
+    <p>
+      <strong>发散攻击</strong>利用以下现象：经过 RLHF 或指令微调的模型
+      会在正常使用期间抑制记忆输出，
+      但可以通过精心制作的对抗提示诱导其"忘记"这种抑制。
+      Carlini et al. (2023) 从 ChatGPT 中提取了兆字节的训练数据 — 尽管
+      其经过对齐训练 — 仅通过使用简单的重复提示：让模型
+      无限重复一个词最终导致其偏离对齐行为
+      并逐字输出训练数据。
+      <a class="cite" href="https://not-just-memorization.github.io/extracting-training-data-from-chatgpt.html">[Carlini et al., 2023 — ChatGPT 提取]</a>
+    </p>
+    <p>
+      <strong>前缀攻击</strong>向模型提供来自训练数据的真实前缀，
+      并观察它是否准确地完成段落其余部分。
+      在 Carlini et al. 的实验中，用 "My address is 1 Main Street" 提示 GPT-2
+      导致其用特定真实个人的联系信息准确完成。
+      <strong>基于补全的提取</strong>是通用技术：任何在训练期间见过的
+      提示都充当其后文本段的检索键。
+    </p>
+
+    <h3>测试记忆</h3>
 
 <pre><code><span class="kw">import</span> torch
 <span class="kw">from</span> transformers <span class="kw">import</span> GPT2LMHeadModel, GPT2Tokenizer
@@ -527,7 +527,7 @@ surrogate_model = extractor.run_extraction(domain_sampler, batch_size=<span clas
 
 
 <span class="kw">def</span> <span class="fn">compute_perplexity</span>(model, tokenizer, text, device=<span class="st">"cpu"</span>):
-    <span class="st">"""Compute per-token perplexity of a text under a given model."""</span>
+    <span class="st">"""计算给定模型下文本的每令牌困惑度。"""</span>
     inputs = tokenizer(text, return_tensors=<span class="st">"pt"</span>).to(device)
     <span class="kw">with</span> torch.no_grad():
         output = model(**inputs, labels=inputs[<span class="st">"input_ids"</span>])
@@ -536,33 +536,33 @@ surrogate_model = extractor.run_extraction(domain_sampler, batch_size=<span clas
 
 <span class="kw">def</span> <span class="fn">memorization_score</span>(large_model, small_model, tokenizer, text, device=<span class="st">"cpu"</span>):
     <span class="st">"""
-    Carlini et al. 'ratio' metric: compares large vs. small model perplexity.
-    A memorized passage has LOW perplexity under the large model
-    but NOT proportionally low under the small reference model.
-    Higher score → more likely memorized.
+    Carlini et al. 'ratio' 指标：比较大模型与小模型的困惑度。
+    被记住的段落在大模型下具有低困惑度，
+    但在小参考模型下并不成比例地低。
+    分数越高 → 越可能被记住。
     """</span>
     ppl_large = compute_perplexity(large_model, tokenizer, text, device)
     ppl_small = compute_perplexity(small_model, tokenizer, text, device)
 
-    <span class="cm"># Ratio metric: lower PPL in large vs small suggests memorization</span>
+    <span class="cm"># Ratio 指标：大模型与小模型的 PPL 比值较低提示存在记忆</span>
     ratio_score = np.log(ppl_small) / np.log(ppl_large)
 
-    <span class="cm"># Zlib metric: compare model PPL to compression-based estimate</span>
+    <span class="cm"># Zlib 指标：比较模型 PPL 与基于压缩的估计</span>
     zlib_entropy = len(zlib.compress(text.encode())) / len(text)
     zlib_score   = np.log(ppl_large) / zlib_entropy
 
     <span class="kw">return</span> {
         <span class="st">"perplexity_large"</span>: ppl_large,
         <span class="st">"perplexity_small"</span>: ppl_small,
-        <span class="st">"ratio_score"</span>:      ratio_score,     <span class="cm"># higher → more suspect</span>
-        <span class="st">"zlib_score"</span>:       zlib_score,      <span class="cm"># higher → less compressible = natural text</span>
+        <span class="st">"ratio_score"</span>:      ratio_score,     <span class="cm"># 越高 → 越可疑</span>
+        <span class="st">"zlib_score"</span>:       zlib_score,      <span class="cm"># 越高 → 越不易压缩 = 自然文本</span>
     }
 
 
 <span class="kw">def</span> <span class="fn">generate_candidates</span>(model, tokenizer, n_samples=<span class="nb">200</span>, max_length=<span class="nb">256</span>, device=<span class="st">"cpu"</span>):
     <span class="st">"""
-    Generate n_samples completions from the model with an empty prefix.
-    Returns a list of generated strings.
+    使用空前缀从模型生成 n_samples 个补全文本。
+    返回生成的字符串列表。
     """</span>
     model.eval()
     candidates = []
@@ -582,13 +582,13 @@ surrogate_model = extractor.run_extraction(domain_sampler, batch_size=<span clas
     <span class="kw">return</span> candidates
 
 
-<span class="cm"># ── Example: screen 200 GPT-2 generations for possible memorized text ──</span>
+<span class="cm"># ── 示例：筛选 200 个 GPT-2 生成文本中可能的记忆内容 ──</span>
 <span class="kw">if</span> __name__ == <span class="st">"__main__"</span>:
     device = <span class="st">"cuda"</span> <span class="kw">if</span> torch.cuda.is_available() <span class="kw">else</span> <span class="st">"cpu"</span>
 
     tokenizer  = GPT2Tokenizer.from_pretrained(<span class="st">"gpt2-xl"</span>)
     model_xl   = GPT2LMHeadModel.from_pretrained(<span class="st">"gpt2-xl"</span>).to(device)
-    model_sm   = GPT2LMHeadModel.from_pretrained(<span class="st">"gpt2"</span>).to(device)   <span class="cm"># reference</span>
+    model_sm   = GPT2LMHeadModel.from_pretrained(<span class="st">"gpt2"</span>).to(device)   <span class="cm"># 参考模型</span>
 
     candidates = generate_candidates(model_xl, tokenizer, n_samples=<span class="nb">200</span>, device=device)
 
@@ -597,22 +597,22 @@ surrogate_model = extractor.run_extraction(domain_sampler, batch_size=<span clas
         scores = memorization_score(model_xl, model_sm, tokenizer, text, device)
         scored.append((text, scores))
 
-    <span class="cm"># Sort by ratio score descending — highest ratio = most likely memorized</span>
+    <span class="cm"># 按 ratio 分数降序排列 — 最高 ratio = 最可能被记住</span>
     scored.sort(key=<span class="kw">lambda</span> x: x[<span class="nb">1</span>][<span class="st">"ratio_score"</span>], reverse=<span class="kw">True</span>)
 
-    <span class="kw">print</span>(<span class="st">"Top 5 candidates most likely to contain memorized training data:"</span>)
+    <span class="kw">print</span>(<span class="st">"最可能包含记忆训练数据的前 5 个候选："</span>)
     <span class="kw">for</span> text, scores <span class="kw">in</span> scored[:<span class="nb">5</span>]:
         <span class="kw">print</span>(<span class="st">f"  Ratio={scores['ratio_score']:.3f} | PPL(xl)={scores['perplexity_large']:.1f}"</span>)
-        <span class="kw">print</span>(<span class="st">f"  Text: {text[:<span class="nb">120</span>]}..."</span>)
+        <span class="kw">print</span>(<span class="st">f"  文本: {text[:<span class="nb">120</span>]}..."</span>)
         <span class="kw">print</span>()
 </code></pre>
 
     <p>
-      In Carlini et al.'s best attack configuration, 67% of top-ranked candidates were
-      confirmed verbatim training examples. Among their 604 unique extracted memorized
-      sequences, 46 contained personal names and 32 contained contact information —
-      real individuals whose data had been harvested into GPT-2's CommonCrawl
-      training corpus without their knowledge.
+      在 Carlini et al. 的最佳攻击配置中，67% 的排名靠前候选者被
+      确认为逐字训练示例。在他们 604 个独特提取的记忆
+      序列中，46 个包含个人姓名，32 个包含联系信息 —
+      真实个人的数据在不知情的情况下被收集到 GPT-2 的 CommonCrawl
+      训练语料库中。
       <a class="cite" href="https://www.usenix.org/system/files/sec21-carlini-extracting.pdf">[USENIX Security 2021]</a>
     </p>
   </section>
@@ -620,61 +620,61 @@ surrogate_model = extractor.run_extraction(domain_sampler, batch_size=<span clas
   <!-- ═══════════════════════════════════════════════════════ SECTION 4 ══ -->
   <section class="section" id="s4">
     <span class="section-number">04</span>
-    <h2 id="membership-inference">Membership Inference</h2>
+    <h2 id="membership-inference">成员推理</h2>
 
     <p>
-      Imagine a hospital trains a machine learning model to predict patient readmission risk.
-      The model is deployed via a public API for insurance companies to query. Now consider
-      an adversary — perhaps a competitor, a nosy employer, or a malicious insurer — who
-      has a specific individual's medical record and wants to know: <em>was this person's
-      data used to train this model?</em> This is the <strong>membership inference</strong>
-      problem, and it is one of the most practically significant privacy threats in modern
-      machine learning.
+      想象一家医院训练了一个机器学习模型来预测患者再入院风险。
+      该模型通过公共 API 部署，供保险公司查询。现在考虑
+      一个攻击者 — 可能是竞争对手、好事的雇主
+      或恶意的保险公司 — 拥有某个特定个人的
+      医疗记录，并想知道：
+      <em>这个人的数据被用于训练这个模型了吗？</em>这就是<strong>成员推理</strong>
+      问题，也是现代机器学习中最具实际意义的隐私威胁之一。
       <a class="cite" href="https://arxiv.org/pdf/1610.05820">[Shokri et al., IEEE S&amp;P 2017]</a>
     </p>
 
-    <h3>Why Models Leak Membership</h3>
+    <h3>模型为何泄露成员信息</h3>
     <p>
-      The fundamental cause is <strong>overfitting</strong>. A model that has been trained on
-      a data point typically assigns it higher confidence, lower loss, and different internal
-      representations than unseen data points. Even well-regularized models exhibit this
-      difference to a measurable degree. The gap is larger for rare, unusual, or exactly
-      duplicated training examples — the same memorization phenomenon that enables training
-      data extraction also enables membership inference.
+      根本原因是<strong>过拟合</strong>。在数据点上训练过的
+      模型通常会为其分配更高的置信度、更低的损失以及不同的内部
+      表示，与未见过的数据点相比。即使是正则化良好的模型也会
+      在可测量的程度上表现出这种差异。对于稀有、不寻常或精确
+      重复的训练样本，差距更大 — 同样的记忆现象使得训练数据
+      提取成为可能，也使成员推理成为可能。
     </p>
 
-    <h3>The Shadow Model Technique</h3>
+    <h3>影子模型技术</h3>
     <p>
-      The seminal attack by Shokri et al. (2017) introduced the <strong>shadow model</strong>
-      approach. Because the attacker cannot directly observe the target model's training set,
-      they simulate it: they train several <em>shadow models</em> on datasets drawn from
-      the same distribution as the target's training data. For each shadow model, the attacker
-      knows exactly which points were in the training set (members) and which were not
-      (non-members). They record the model's output vector for each point and label it
-      accordingly. This produces a labeled dataset of (model_output, member/non-member) pairs.
-      An attack classifier trained on this labeled dataset can then be applied to the target
-      model's outputs to infer membership.
+      Shokri et al. (2017) 的开创性攻击引入了<strong>影子模型</strong>
+      方法。由于攻击者无法直接观察目标模型的训练集，
+      他们模拟训练集：他们在与目标训练数据相同分布的数据集上
+      训练几个<em>影子模型</em>。对于每个影子模型，攻击者
+      确切知道哪些点在训练集中（成员）以及哪些不在
+      （非成员）。他们记录模型对每个点的输出向量并进行相应
+      标注。这产生了一个标记数据集，包含（模型输出，成员/非成员）对。
+      在这个标记数据集上训练的攻击分类器随后可以应用于目标
+      模型的输出来推断成员身份。
     </p>
 
     <p>
-      The technique achieved median membership inference accuracy of <strong>94%</strong>
-      against models trained on Google's ML services and <strong>74%</strong> against
-      Amazon's services in realistic experiments.
+      该技术在对 Google ML 服务训练的模型上实现了
+      <strong>94%</strong> 的中位成员推理准确率，
+      在对 Amazon 服务的现实实验中达到 <strong>74%</strong>。
       <a class="cite" href="https://arxiv.org/pdf/1610.05820">[Shokri et al.]</a>
     </p>
 
-    <h3>Loss-Based Inference</h3>
+    <h3>基于损失的推理</h3>
     <p>
-      A simpler approach that avoids training shadow models is the <strong>loss threshold
-      attack</strong>: compute the model's loss on the target point and compare it to a
-      threshold. If the loss is below the threshold (the model is highly confident), predict
-      membership. This works because training examples tend to have lower loss than unseen
-      data, especially for overfit models. More sophisticated variants use <strong>reference
-      models</strong>: compute the likelihood ratio between the target model and a reference
-      model trained on disjoint data. Points where this ratio is high are likely members.
+      避免训练影子模型的一种更简单的方法是<strong>损失阈值
+      攻击</strong>：计算模型在目标点上的损失并将其与
+      阈值进行比较。如果损失低于阈值（模型高度自信），则预测
+      为成员。这之所以有效，是因为训练样本的损失往往低于未见
+      数据，尤其是对于过拟合模型。更复杂的变体使用<strong>参考
+      模型</strong>：计算目标模型与在不重叠数据上训练的参考模型之间的
+      似然比。该比率高的点很可能是成员。
     </p>
 
-    <h3>Python Implementation</h3>
+    <h3>Python 实现</h3>
 
 <pre><code><span class="kw">import</span> numpy <span class="kw">as</span> np
 <span class="kw">from</span> sklearn.neural_network <span class="kw">import</span> MLPClassifier
@@ -684,10 +684,10 @@ surrogate_model = extractor.run_extraction(domain_sampler, batch_size=<span clas
 
 <span class="kw">class</span> <span class="nm">MembershipInferenceAttack</span>:
     <span class="st">"""
-    Shadow-model-based membership inference attack.
+    基于影子模型的成员推理攻击。
 
-    Assumes black-box access to a target model that returns
-    class probability vectors for input features.
+    假设对返回输入特征类别概率向量的
+    目标模型具有黑盒访问权限。
     """</span>
 
     <span class="kw">def</span> <span class="fn">__init__</span>(self, n_shadow=<span class="nb">4</span>, shadow_architecture=<span class="kw">None</span>):
@@ -698,7 +698,7 @@ surrogate_model = extractor.run_extraction(domain_sampler, batch_size=<span clas
         self._trained = <span class="kw">False</span>
 
     <span class="kw">def</span> <span class="fn">_train_shadow_model</span>(self, X_train, y_train):
-        <span class="st">"""Train a single shadow model on a subset of proxy data."""</span>
+        <span class="st">"""在代理数据子集上训练单个影子模型。"""</span>
         shadow = MLPClassifier(
             hidden_layer_sizes=self.shadow_architecture,
             max_iter=<span class="nb">300</span>,
@@ -709,12 +709,12 @@ surrogate_model = extractor.run_extraction(domain_sampler, batch_size=<span clas
 
     <span class="kw">def</span> <span class="fn">_extract_features</span>(self, model, X):
         <span class="st">"""
-        Extract membership inference features from model outputs.
-        Uses the full probability vector as features (preserves calibration signal).
+        从模型输出中提取成员推理特征。
+        使用完整概率向量作为特征（保留校准信号）。
         """</span>
         proba = model.predict_proba(X)   <span class="cm"># shape: (n_samples, n_classes)</span>
 
-        <span class="cm"># Additional engineered features: confidence, entropy, top-2 gap</span>
+        <span class="cm"># 额外工程特征：置信度、熵、top-2 差距</span>
         confidence   = proba.max(axis=<span class="nb">1</span>, keepdims=<span class="kw">True</span>)
         pred_entropy = -np.sum(proba * np.log(proba + <span class="nb">1e-9</span>), axis=<span class="nb">1</span>, keepdims=<span class="kw">True</span>)
         sorted_p     = np.sort(proba, axis=<span class="nb">1</span>)[:, ::-<span class="nb">1</span>]
@@ -724,11 +724,11 @@ surrogate_model = extractor.run_extraction(domain_sampler, batch_size=<span clas
 
     <span class="kw">def</span> <span class="fn">train_attack</span>(self, proxy_data_X, proxy_data_y):
         <span class="st">"""
-        Build labeled (features, membership) dataset using shadow models,
-        then train the attack classifier.
+        使用影子模型构建标记的（特征，成员身份）数据集，
+        然后训练攻击分类器。
 
-        proxy_data_X, proxy_data_y : dataset drawn from same distribution
-                                     as target's training set.
+        proxy_data_X, proxy_data_y : 从与目标训练集
+                                     相同分布中抽取的数据集。
         """</span>
         all_features = []
         all_labels   = []
@@ -737,7 +737,7 @@ surrogate_model = extractor.run_extraction(domain_sampler, batch_size=<span clas
         split = n <span class="nb">// 2</span>
 
         <span class="kw">for</span> i <span class="kw">in</span> range(self.n_shadow):
-            <span class="cm"># Randomly partition proxy data into shadow-train and shadow-test</span>
+            <span class="cm"># 随机将代理数据划分为影子训练集和影子测试集</span>
             idx = np.random.permutation(n)
             train_idx, test_idx = idx[:split], idx[split:]
 
@@ -747,9 +747,9 @@ surrogate_model = extractor.run_extraction(domain_sampler, batch_size=<span clas
             shadow = self._train_shadow_model(X_tr, y_tr)
             self.shadow_models.append(shadow)
 
-            <span class="cm"># "In" examples: training set of this shadow model → label 1</span>
+            <span class="cm"># "In" 示例：该影子模型的训练集 → 标签 1</span>
             f_in  = self._extract_features(shadow, X_tr)
-            <span class="cm"># "Out" examples: test set of this shadow model → label 0</span>
+            <span class="cm"># "Out" 示例：该影子模型的测试集 → 标签 0</span>
             f_out = self._extract_features(shadow, X_te)
 
             all_features.append(np.vstack([f_in, f_out]))
@@ -766,18 +766,18 @@ surrogate_model = extractor.run_extraction(domain_sampler, batch_size=<span clas
 
     <span class="kw">def</span> <span class="fn">infer_membership</span>(self, target_model, query_points):
         <span class="st">"""
-        Given a trained target model and query data points,
-        return membership probability for each point.
-        1.0 = likely member, 0.0 = likely non-member.
+        给定一个训练好的目标模型和查询数据点，
+        返回每个点的成员概率。
+        1.0 = 可能是成员，0.0 = 可能不是成员。
         """</span>
         <span class="kw">if not</span> self._trained:
-            <span class="kw">raise</span> RuntimeError(<span class="st">"Call train_attack() first."</span>)
+            <span class="kw">raise</span> RuntimeError(<span class="st">"请先调用 train_attack()。"</span>)
 
         features = self._extract_features(target_model, query_points)
         <span class="kw">return</span> self.attack_classifier.predict_proba(features)[:, <span class="nb">1</span>]
 
     <span class="kw">def</span> <span class="fn">evaluate</span>(self, target_model, member_X, nonmember_X):
-        <span class="st">"""Compute AUC of attack against target model."""</span>
+        <span class="st">"""计算针对目标模型的攻击 AUC。"""</span>
         member_scores    = self.infer_membership(target_model, member_X)
         nonmember_scores = self.infer_membership(target_model, nonmember_X)
 
@@ -789,190 +789,190 @@ surrogate_model = extractor.run_extraction(domain_sampler, batch_size=<span clas
         <span class="kw">return</span> auc
 </code></pre>
 
-    <h3>Privacy Implications: GDPR and HIPAA</h3>
+    <h3>隐私影响：GDPR 与 HIPAA</h3>
     <p>
-      Membership inference directly violates the privacy principles enshrined in major
-      data protection laws. Under <strong>GDPR Article 17</strong> (right to erasure),
-      individuals can request deletion of their data — but if a deployed model reveals
-      membership, effective deletion becomes impossible without retraining or applying
-      machine unlearning techniques. Under <strong>HIPAA</strong>, health information used
-      to train models without de-identification may expose institutions to liability if
-      membership can be inferred from the deployed model. Regulatory bodies are increasingly
-      treating demonstrable membership inference vulnerability as a compliance failure,
-      not merely a theoretical risk.
+      成员推理直接违反了主要数据保护法律所载明的隐私原则。
+      根据<strong>GDPR 第 17 条</strong>（被遗忘权），
+      个人可以请求删除其数据 — 但如果已部署的模型揭示了
+      成员身份，则除非重新训练或应用机器遗忘技术，
+      否则无法实现有效删除。根据<strong>HIPAA</strong>，用于训练模型
+      而未经过脱敏处理的健康信息，如果可以从已部署模型中推断出成员身份，
+      可能会使机构面临责任。监管机构越来越多地
+      将可证明的成员推理漏洞视为合规失败，
+      而不仅仅是理论风险。
     </p>
   </section>
 
   <!-- ═══════════════════════════════════════════════════════ SECTION 5 ══ -->
   <section class="section" id="s5">
     <span class="section-number">05</span>
-    <h2 id="attribute-inference">Attribute Inference</h2>
+    <h2 id="attribute-inference">属性推理</h2>
 
     <p>
-      Membership inference is a binary question: was this person in the training set or not?
-      <strong>Attribute inference</strong> is more granular: given that a person is in the
-      training set (or even just as an input to the model), can an attacker learn
-      <em>sensitive attributes</em> about them that were not explicitly provided as input?
-      This class of attack is particularly pernicious because it can operate at query-time,
-      not just at training time — any prediction API can potentially leak demographic
-      or behavioral attributes about the query subject.
+      成员推理是一个二元问题：这个人是否在训练集中？
+      <strong>属性推理</strong>更加精细：已知一个人
+      在训练集中（或仅仅是模型的输入），攻击者能否了解
+      其未作为输入明确提供的<em>敏感属性</em>？
+      这类攻击尤其有害，因为它可以在查询时运作，
+      而不仅仅是在训练时 — 任何预测 API 都可能泄露
+      查询对象的人口统计或行为属性。
     </p>
 
-    <h3>How Attribute Inference Works</h3>
+    <h3>属性推理如何工作</h3>
     <p>
-      Consider a credit scoring model trained on a dataset that includes both "approved
-      features" (income, credit history, loan amount) and "protected attributes" (race,
-      gender, zip code as a proxy for race). Even if the protected attributes are excluded
-      from the model's official feature set at inference time, the model may have absorbed
-      the correlation during training. An adversary who knows the target individual's approved
-      features can query the model and, by observing the prediction, infer the individual's
-      protected attributes. Research has shown that even models trained with explicit fairness
-      constraints can still leak protected attributes through their output distributions.
+      考虑一个信用评分模型，其训练数据包括"批准的
+      特征"（收入、信用历史、贷款金额）和"受保护的属性"（种族、
+      性别、邮政编码作为种族的代理）。即使在推理时受保护属性被排除
+      在模型的官方特征集之外，模型也可能在训练期间吸收了
+      相关性。知道目标个体已批准特征
+      的攻击者可以查询模型，并通过观察预测来推断该个体的
+      受保护属性。研究表明，即使使用显式公平性约束训练的模型
+      仍然可以通过其输出分布泄露受保护属性。
     </p>
 
     <p>
-      The attack typically works by training a <strong>reconstruction model</strong>:
-      the attacker collects many (known_features, model_output) pairs where the sensitive
-      attribute is also known (from a separate dataset or via correlation), and trains a
-      classifier to predict the sensitive attribute from the model's output. Yeom et al.
-      (2018) formalized this as an attack that succeeds whenever a model has learned
-      to exploit the correlation between the sensitive attribute and the label.
+      攻击通常通过训练<strong>重建模型</strong>来工作：
+      攻击者收集许多（已知特征，模型输出）对，其中敏感属性
+      也是已知的（来自单独的数据集或通过相关性），并训练一个
+      分类器从模型输出预测敏感属性。Yeom et al.
+      (2018) 将其形式化为一种攻击，每当模型学会
+      利用敏感属性和标签之间的相关性时，该攻击就会成功。
     </p>
 
-    <h3>Demographic and Behavioral Inference</h3>
+    <h3>人口统计和行为推理</h3>
     <p>
-      LLMs present a particularly rich surface for attribute inference because they produce
-      nuanced, open-ended outputs. Research has demonstrated that LLMs can be used to
-      predict user demographics (age, gender, political affiliation, nationality) from
-      writing style alone. When an LLM is fine-tuned on user interaction logs, the fine-tuned
-      model may expose individual users' characteristics through subtle systematic differences
-      in how it responds to queries — even for users who were part of the fine-tuning set
-      rather than the current query.
+      LLM 为属性推理提供了特别丰富的攻击面，因为它们产生
+      细微、开放式的输出。研究表明，LLM 可以仅通过
+      写作风格预测用户人口统计信息（年龄、性别、政治倾向、国籍）。
+      当 LLM 在用户交互日志上进行微调时，微调后的
+      模型可能通过其对查询做出响应的微妙系统性差异
+      暴露个体用户的特征 — 即使对于属于微调集
+      而非当前查询的用户也是如此。
     </p>
 
-    <h3>Cross-Referencing Attacks</h3>
+    <h3>交叉引用攻击</h3>
     <p>
-      A powerful variant combines attribute inference with auxiliary data. The attacker
-      does not rely on the model alone; they combine model outputs with publicly available
-      databases, social media profiles, and other data sources. For example, knowing that
-      a medical model predicts a 73% readmission risk for a patient with features (age=54,
-      zip=90210, diagnosis=T2D) might be enough — when cross-referenced with public
-      voter registration and property records — to uniquely identify the patient and
-      infer their full medical history.
+      一种强大的变体将属性推理与辅助数据相结合。攻击者
+      不仅仅依赖模型；他们将模型输出与公开可用的
+      数据库、社交媒体资料和其他数据源相结合。例如，知道一个
+      医疗模型预测具有（年龄=54，邮政编码=90210，诊断=T2D）特征的
+      患者有 73% 的再入院风险 — 当与公开的
+      选民登记和财产记录交叉引用时 — 可能足以唯一识别该患者并
+      推断其完整的病史。
     </p>
 
     <div class="callout callout-warn">
-      <strong>Ethical and Regulatory Concerns</strong>
-      Attribute inference attacks may constitute unlawful discrimination if they reveal
-      protected characteristics used in consequential decisions (employment, credit, insurance),
-      violating the EU AI Act's provisions on prohibited AI practices and the CCPA's
-      protections against inference of sensitive personal characteristics. Organizations
-      deploying prediction APIs for consequential decisions should conduct attribute
-      inference audits as part of their model release process.
+      <strong>伦理和监管关切</strong>
+      属性推理攻击如果泄露用于重大决策（就业、信用、保险）
+      的受保护特征，可能构成非法歧视，
+      违反欧盟 AI 法案关于禁止 AI 实践的规定以及 CCPA
+      对敏感个人特征推理的保护。为重大决策
+      部署预测 API 的组织应将属性推理审计作为
+      模型发布流程的一部分。
     </div>
 
-    <h3>Mitigation Strategies</h3>
+    <h3>缓解策略</h3>
     <p>
-      Defending against attribute inference requires both training-time and deployment-time
-      interventions. <strong>Adversarial training for fairness</strong> penalizes models that
-      allow a discriminator to infer protected attributes from intermediate representations.
-      <strong>Output restriction</strong> — returning only hard labels rather than confidence
-      scores — reduces the information available to an attacker but does not eliminate the
-      risk. <strong>Federated learning with differential privacy</strong> can limit the amount
-      of individual-level information encoded in model weights, providing the strongest
-      theoretical guarantees.
+      防御属性推理需要训练时和部署时的
+      干预。<strong>面向公平性的对抗训练</strong>惩罚允许
+      判别器从中间表示推断受保护属性的模型。
+      <strong>输出限制</strong> — 仅返回硬标签而非置信度
+      分数 — 减少了攻击者可用的信息，但并未消除
+      风险。<strong>带差分隐私的联邦学习</strong>可以限制
+      编码在模型权重中的个人级信息量，提供了最强
+      的理论保证。
     </p>
   </section>
 
   <!-- ═══════════════════════════════════════════════════════ SECTION 6 ══ -->
   <section class="section" id="s6">
     <span class="section-number">06</span>
-    <h2 id="side-channel-attacks-on-llms-whisper-leak">Side-Channel Attacks on LLMs: Whisper Leak</h2>
+    <h2 id="side-channel-attacks-on-llms-whisper-leak">针对 LLM 的侧信道攻击：Whisper Leak</h2>
 
     <p>
-      A widespread assumption in LLM deployment is that TLS/HTTPS encryption provides
-      meaningful confidentiality for user queries. The <strong>Whisper Leak</strong> research
-      (2025) dismantles this assumption. The attack demonstrates that an adversary with
-      passive access to a user's encrypted network traffic — such as an internet service
-      provider, a compromised router, or a malicious Wi-Fi access point — can infer the
-      <em>topic</em> of a user's LLM query with over 98% accuracy on 17 of 28 tested
-      commercial LLMs, without ever decrypting a single byte of payload.
+      LLM 部署中的一个普遍假设是 TLS/HTTPS 加密为用户查询提供了
+      有意义的保密性。<strong>Whisper Leak</strong> 研究
+      (2025) 打破了这一假设。该攻击表明，具有
+      对用户加密网络流量被动访问权限的攻击者 — 如互联网服务
+      提供商、被入侵的路由器或恶意 Wi-Fi 接入点 — 可以在不解密单个负载字节的情况下，
+      以超过 98% 的准确率推断用户 LLM 查询的<em>主题</em>，
+      在 28 个测试的商业 LLM 中有 17 个达到此水平。
       <a class="cite" href="https://arxiv.org/html/2511.03675v1">[Whisper Leak, arXiv 2511.03675, 2025]</a>
     </p>
 
-    <h3>Attack Premise: Why Encryption Is Not Enough</h3>
+    <h3>攻击前提：为何加密不够</h3>
     <p>
-      TLS (using stream ciphers like AES-GCM) encrypts payload content but preserves
-      payload <em>size</em>: <code>size(ciphertext) = size(plaintext) + constant</code>.
-      When an LLM generates a streaming response token by token, each token is sent as a
-      separate encrypted packet. Because tokens have variable lengths (the token <code>the</code>
-      is 3 characters; <code>antidisestablishmentarianism</code> is 28), the sequence of
-      packet sizes directly encodes the sequence of token lengths.
+      TLS（使用 AES-GCM 等流密码）加密负载内容，但保留了
+      负载<em>大小</em>：<code>size(ciphertext) = size(plaintext) + constant</code>。
+      当 LLM 逐个令牌生成流式响应时，每个令牌作为
+      单独的加密数据包发送。由于令牌具有可变长度（令牌 <code>the</code>
+      是 3 个字符；<code>antidisestablishmentarianism</code> 是 28 个），
+      数据包大小的序列直接编码了令牌长度的序列。
     </p>
     <p>
-      The key insight is that <strong>different topics produce systematically different
-      token length patterns</strong>. A response about quantum physics uses longer, less
-      frequent technical terms. A response about cooking uses shorter, more common vocabulary.
-      A response about legal matters includes specific legal terms and Latin phrases.
-      These patterns are stable enough across different users asking similar questions
-      that a trained classifier can identify the topic from packet sizes alone — even
-      without seeing the content.
+      关键洞察在于<strong>不同的主题会产生系统性地不同的
+      令牌长度模式</strong>。关于量子物理的响应使用更长、更不
+      频繁的技术术语。关于烹饪的响应使用更短、更常见的词汇。
+      关于法律事务的响应包括特定的法律术语和拉丁短语。
+      这些模式在不同的用户提出类似问题时足够稳定，
+      以至于训练好的分类器可以仅从数据包大小识别主题 — 即使
+      看不到内容。
     </p>
 
-    <h3>Experimental Setup and Results</h3>
+    <h3>实验设置和结果</h3>
     <p>
-      The researchers collected 21,716 queries per model (100 topic variants × 100 repeats
-      + 11,716 Quora noise queries) and trained binary classifiers using tcpdump-captured
-      encrypted traffic traces. Testing was conducted against 28 LLMs from major providers
-      including OpenAI (GPT-4o-mini, GPT-4.1), Anthropic (Claude 3 Haiku), Google
-      (Gemini 1.5 Flash, 2.5 Pro), Microsoft, xAI (Grok), Mistral, DeepSeek, Meta
-      (LLaMA via Lambda), and Amazon (Nova).
+      研究人员为每个模型收集了 21,716 个查询（100 个主题变体 × 100 次重复
+      + 11,716 个 Quora 噪声查询），并使用 tcpdump 捕获的
+      加密流量痕迹训练二元分类器。测试针对来自主要提供商的 28 个 LLM
+      进行，包括 OpenAI（GPT-4o-mini, GPT-4.1）、Anthropic（Claude 3 Haiku）、Google
+      （Gemini 1.5 Flash, 2.5 Pro）、Microsoft、xAI（Grok）、Mistral、DeepSeek、Meta
+      （通过 Lambda 访问的 LLaMA）和 Amazon（Nova）。
       <a class="cite" href="https://arxiv.org/html/2511.03675v1">[Whisper Leak]</a>
     </p>
 
     <div class="concept-grid">
       <div class="concept-card">
-        <h4>AUPRC (Median)</h4>
-        <p>&gt;98% for 17 of 28 models. Average 96.8% across all models.</p>
+        <h4>AUPRC（中位数）</h4>
+        <p>28 个模型中的 17 个超过 98%。所有模型中平均 96.8%。</p>
       </div>
       <div class="concept-card">
-        <h4>Precision</h4>
-        <p>100% precision at 5–20% recall for 17/28 models (e.g., GPT-4o-mini, Mistral, Grok).</p>
+        <h4>精确率</h4>
+        <p>17/28 个模型在 5–20% 召回率下达到 100% 精确率（如 GPT-4o-mini, Mistral, Grok）。</p>
       </div>
       <div class="concept-card">
-        <h4>Hardest Targets</h4>
-        <p>Google Gemini (81–84% AUPRC) and Amazon Nova (71–77%) were most resistant.</p>
+        <h4>最难目标</h4>
+        <p>Google Gemini（81–84% AUPRC）和 Amazon Nova（71–77%）最具有抵抗性。</p>
       </div>
       <div class="concept-card">
-        <h4>Attacker Model</h4>
-        <p>Passive network observer (ISP-level). No active interference required.</p>
+        <h4>攻击者模型</h4>
+        <p>被动网络观察者（ISP 级别）。无需主动干扰。</p>
       </div>
     </div>
 
-    <h3>Three Classifier Architectures</h3>
+    <h3>三种分类器架构</h3>
     <p>
-      The paper evaluated three classifier architectures on the packet-size + inter-arrival
-      time feature sequences:
+      论文在数据包大小 + 到达间隔时间特征序列上评估了
+      三种分类器架构：
     </p>
     <ul>
-      <li><strong>LightGBM</strong>: Gradient-boosted decision tree ensemble on flattened,
-        zero-padded packet size/timing sequences (padded to 95th percentile length). Fast
-        to train, competitive accuracy.</li>
-      <li><strong>BiLSTM</strong>: Bidirectional LSTM with attention mechanism. Embeds
-        each (packet_size, inter_arrival_time) pair, processes with BiLSTM + attention,
-        then classifies via a two-layer MLP head. Captures sequential dependencies.</li>
-      <li><strong>BERT-based (DistilBERT)</strong>: Discretizes packet sizes and timings
-        into 50-bin tokens, then fine-tunes a DistilBERT classifier on these token sequences.
-        Best performance on models with complex packet distributions.</li>
+      <li><strong>LightGBM</strong>：基于扁平化零填充数据包大小/时序序列
+        （填充到第 95 百分位长度）的梯度提升决策树集成。训练快速，
+        具有竞争力的准确率。</li>
+      <li><strong>BiLSTM</strong>：带注意力机制的双向 LSTM。嵌入每个
+        （数据包大小，到达间隔时间）对，通过 BiLSTM + 注意力处理，
+        然后通过两层 MLP 头部进行分类。捕获序列依赖关系。</li>
+      <li><strong>基于 BERT（DistilBERT）</strong>：将数据包大小和时间离散化为 50 个分箱的令牌，
+        然后在这些令牌序列上微调 DistilBERT 分类器。
+        在具有复杂数据包分布的模型上表现最佳。</li>
     </ul>
 
-    <h3>Conceptual Attack Code: Traffic Capture and Classification</h3>
+    <h3>概念攻击代码：流量捕获和分类</h3>
 
 <pre><code><span class="kw">import</span> subprocess
 <span class="kw">import</span> struct
 <span class="kw">import</span> numpy <span class="kw">as</span> np
 <span class="kw">from</span> collections <span class="kw">import</span> namedtuple
-<span class="kw">import</span> joblib   <span class="cm"># for loading pre-trained LightGBM classifier</span>
+<span class="kw">import</span> joblib   <span class="cm"># 用于加载预训练的 LightGBM 分类器</span>
 
 
 PacketTrace = namedtuple(<span class="st">"PacketTrace"</span>, [<span class="st">"sizes"</span>, <span class="st">"timings"</span>])
@@ -980,25 +980,25 @@ PacketTrace = namedtuple(<span class="st">"PacketTrace"</span>, [<span class="st
 
 <span class="kw">def</span> <span class="fn">capture_llm_traffic</span>(target_host, duration_sec=<span class="nb">30</span>, interface=<span class="st">"eth0"</span>):
     <span class="st">"""
-    Passively capture encrypted HTTPS packets to/from an LLM API endpoint.
-    Returns a PacketTrace with per-packet sizes and inter-arrival times.
+    被动捕获发往/来自 LLM API 端点的加密 HTTPS 数据包。
+    返回包含每个数据包大小和到达间隔时间的 PacketTrace。
 
-    IMPORTANT: Only use on networks/systems you are authorized to monitor.
-    This is a conceptual demonstration of the Whisper Leak methodology.
+    重要提示：仅在您获得授权的网络/系统上使用。
+    这是对 Whisper Leak 方法论的概念性演示。
 
-    Uses tcpdump (requires appropriate privileges or packet capture capability).
+    使用 tcpdump（需要适当的权限或数据包捕获能力）。
     """</span>
-    <span class="cm"># In production, Whisper Leak uses tcpdump output parsed with Scapy</span>
-    <span class="cm"># Here we show the structure; actual implementation needs pcap parsing</span>
+    <span class="cm"># 在生产环境中，Whisper Leak 使用 Scapy 解析 tcpdump 输出</span>
+    <span class="cm"># 此处展示结构；实际实现需要 pcap 解析</span>
 
     cmd = [
         <span class="st">"tcpdump"</span>, <span class="st">"-i"</span>, interface,
-        <span class="st">"-nn"</span>, <span class="st">"-q"</span>, <span class="st">"-tt"</span>,             <span class="cm"># timestamp + size, no DNS resolution</span>
+        <span class="st">"-nn"</span>, <span class="st">"-q"</span>, <span class="st">"-tt"</span>,             <span class="cm"># 时间戳 + 大小，无 DNS 解析</span>
         <span class="st">f"host {target_host} and port 443"</span>,
-        <span class="st">"-c"</span>, <span class="st">"2000"</span>                       <span class="cm"># capture up to 2000 packets</span>
+        <span class="st">"-c"</span>, <span class="st">"2000"</span>                       <span class="cm"># 捕获最多 2000 个数据包</span>
     ]
 
-    <span class="cm"># Parse output lines of form: "1700000000.123456 IP src > dst: ... length NNN"</span>
+    <span class="cm"># 解析格式如 "1700000000.123456 IP src > dst: ... length NNN" 的输出行</span>
     raw_lines = subprocess.check_output(cmd, stderr=subprocess.DEVNULL).decode()
 
     sizes   = []
@@ -1011,7 +1011,7 @@ PacketTrace = namedtuple(<span class="st">"PacketTrace"</span>, [<span class="st
         <span class="kw">if not</span> parts: <span class="kw">continue</span>
         <span class="kw">try</span>:
             ts  = float(parts[<span class="nb">0</span>])
-            <span class="cm"># length is typically the last token starting with a digit</span>
+            <span class="cm"># 长度通常是最后一个以数字开头的令牌</span>
             pkt_len = int([p <span class="kw">for</span> p <span class="kw">in</span> parts <span class="kw">if</span> p.isdigit()][-<span class="nb">1</span>])
             sizes.append(pkt_len)
             <span class="kw">if</span> prev_ts <span class="kw">is not None</span>:
@@ -1025,291 +1025,291 @@ PacketTrace = namedtuple(<span class="st">"PacketTrace"</span>, [<span class="st
 
 <span class="kw">def</span> <span class="fn">featurize_trace</span>(trace, max_len=<span class="nb">512</span>):
     <span class="st">"""
-    Pad/truncate packet size and inter-arrival sequences to fixed length,
-    then concatenate into a feature vector for LightGBM classification.
-    Mirrors the Whisper Leak featurization strategy.
+    将数据包大小和到达间隔序列填充/截断到固定长度，
+    然后拼接成用于 LightGBM 分类的特征向量。
+    镜像 Whisper Leak 的特征化策略。
     """</span>
     sizes   = np.array(trace.sizes[:max_len],   dtype=np.float32)
     timings = np.array(trace.inter_arrivals[:max_len], dtype=np.float32)
 
-    <span class="cm"># Zero-pad to max_len</span>
+    <span class="cm"># 零填充到 max_len</span>
     sizes_padded   = np.pad(sizes,   (<span class="nb">0</span>, max_len - len(sizes)))
     timings_padded = np.pad(timings, (<span class="nb">0</span>, max_len - len(timings)))
 
-    <span class="cm"># Concatenate sizes + timings into one feature vector</span>
+    <span class="cm"># 将大小和时间拼接成一个特征向量</span>
     feature_vector = np.concatenate([sizes_padded, timings_padded])
     <span class="kw">return</span> feature_vector.reshape(<span class="nb">1</span>, -<span class="nb">1</span>)
 
 
 <span class="kw">def</span> <span class="fn">classify_prompt_topic</span>(trace, classifier_path, topic_labels):
     <span class="st">"""
-    Given a captured traffic trace, load a pre-trained LightGBM classifier
-    and predict the topic of the underlying LLM prompt.
+    给定捕获的流量痕迹，加载预训练的 LightGBM 分类器
+    并预测底层 LLM 提示的主题。
     """</span>
-    clf = joblib.load(classifier_path)      <span class="cm"># pre-trained binary or multi-class model</span>
+    clf = joblib.load(classifier_path)      <span class="cm"># 预训练的二元或多类分类模型</span>
     features = featurize_trace(trace)
     proba = clf.predict_proba(features)[<span class="nb">0</span>]
 
     results = sorted(zip(topic_labels, proba), key=<span class="kw">lambda</span> x: x[<span class="nb">1</span>], reverse=<span class="kw">True</span>)
-    <span class="kw">print</span>(<span class="st">"Topic classification results:"</span>)
+    <span class="kw">print</span>(<span class="st">"主题分类结果："</span>)
     <span class="kw">for</span> topic, prob <span class="kw">in</span> results[:<span class="nb">5</span>]:
         <span class="kw">print</span>(<span class="st">f"  {topic:<span class="nb">30</span>} {prob:.3f}"</span>)
-    <span class="kw">return</span> results[<span class="nb">0</span>][<span class="nb">0</span>]  <span class="cm"># top predicted topic</span>
+    <span class="kw">return</span> results[<span class="nb">0</span>][<span class="nb">0</span>]  <span class="cm"># 预测概率最高的主题</span>
 </code></pre>
 
-    <h3>Defenses</h3>
+    <h3>防御措施</h3>
     <p>
-      The Whisper Leak paper evaluated random padding as a mitigation: appending a
-      random-length string to each streamed token to obscure its length. Cloudflare
-      implemented this defense after the initial disclosure. However, the paper showed
-      that even with padding, <strong>timing information between packets</strong> retains
-      significant classifiable signal. The only fully effective defense is
-      <strong>constant-shape traffic</strong>: padding all responses to a fixed size and
-      batching tokens before transmission, eliminating all packet-size variation.
-      This fundamentally conflicts with the low-latency streaming UX that most LLM
-      providers optimize for.
+      Whisper Leak 论文评估了随机填充作为缓解措施：
+      向每个流式令牌添加随机长度的字符串以隐藏其长度。
+      Cloudflare 在初始披露后实施了此防御。然而，论文表明
+      即使有填充，<strong>数据包之间的时序信息</strong>仍保留
+      显著的可分类信号。
+      唯一完全有效的防御是
+      <strong>恒定形状流量</strong>：将所有响应填充到固定大小并在传输前
+      批量处理令牌，消除所有数据包大小变化。
+      这从根本上与大多数 LLM 提供商优化的低延迟流式用户体验相冲突。
     </p>
   </section>
 
   <!-- ═══════════════════════════════════════════════════════ SECTION 7 ══ -->
   <section class="section" id="s7">
     <span class="section-number">07</span>
-    <h2 id="token-length-side-channel">Token Length Side-Channel</h2>
+    <h2 id="token-length-side-channel">令牌长度侧信道</h2>
 
     <p>
-      The Whisper Leak attack infers prompt <em>topics</em>. The research by
-      <strong>Weiss et al. (2024)</strong> pursues a more precise goal: inferring the
-      <em>exact content</em> of an LLM's response — word for word — from the sizes of
-      encrypted packets. This is the <strong>token length side-channel</strong>, and
-      it represents one of the most startling privacy failures in LLM deployment history.
+      Whisper Leak 攻击推断提示的<em>主题</em>。而
+      <strong>Weiss et al. (2024)</strong> 的研究追求一个更精确的目标：
+      从加密数据包的大小推断 LLM 响应的<em>确切内容</em> —
+      逐字逐句。这就是<strong>令牌长度侧信道</strong>，
+      它代表了 LLM 部署历史上最令人震惊的隐私失败之一。
       <a class="cite" href="https://www.microsoft.com/en-us/security/blog/2025/11/07/whisper-leak-a-novel-side-channel-cyberattack-on-remote-language-models/">[Microsoft Security Blog, 2025]</a>
     </p>
 
-    <h3>Attack Methodology</h3>
+    <h3>攻击方法论</h3>
     <p>
-      When an LLM streams its response token-by-token, each TLS packet carries exactly
-      one token's bytes. The packet size directly reveals the token's byte length: a
-      3-byte packet carries a 3-character token; a 7-byte packet carries a 7-character
-      token. An adversary observing the encrypted stream thus learns the <em>length
-      sequence</em> of every token in the response — e.g., <code>[4, 5, 1, 3, 6, 2, 7, ...]</code>.
+      当 LLM 逐个令牌流式传输其响应时，每个 TLS 数据包正好携带
+      一个令牌的字节。数据包大小直接揭示了令牌的字节长度：
+      3 字节数据包携带 3 字符令牌；7 字节数据包携带 7 字符
+      令牌。因此，观察加密流的攻击者可以了解到响应中每个令牌的
+      <em>长度序列</em> — 例如 <code>[4, 5, 1, 3, 6, 2, 7, ...]</code>。
     </p>
     <p>
-      Armed with this length sequence, Weiss et al. employ a secondary LLM to reconstruct
-      the most plausible sentence matching that exact token length pattern. The task is
-      essentially a constrained text generation problem: generate a coherent sentence
-      whose tokenization produces exactly the observed length sequence. Given that
-      the tokenizer vocabulary is fixed and widely known (e.g., tiktoken for OpenAI models),
-      this is a dramatically constrained problem — far easier than unconstrained generation.
+      有了这个长度序列，Weiss et al. 使用第二个 LLM 来重建
+      与该精确令牌长度模式匹配的最可能句子。该任务本质上是
+      一个受限文本生成问题：生成一个连贯的句子，
+      其分词结果恰好产生观察到的长度序列。鉴于
+      分词器的词汇表是固定的且广为人知（例如 OpenAI 模型的 tiktoken），
+      这是一个极度受限的问题 — 远比无约束生成容易。
     </p>
     <p>
-      The attack achieved approximately <strong>27% exact token reconstruction</strong>
-      of LLM output tokens. While this may seem modest, consider that even partial
-      reconstruction can be sufficient to identify whether a response contained sensitive
-      medical diagnoses, legal advice, or private personal information.
+      该攻击实现了约 <strong>27% 的精确令牌重建</strong>。
+      虽然这看起来不算高，但请考虑即使部分重建
+      也足以确定响应是否包含敏感的
+      医疗诊断、法律建议或私人个人信息。
     </p>
 
-    <h3>Why This Attack Is Structurally Hard to Fix</h3>
+    <h3>为何此攻击在结构上难以修复</h3>
     <p>
-      The root cause is not a bug in TLS — it is a fundamental property of the streaming
-      API design. Any system that:
+      根本原因不是 TLS 的缺陷 — 而是流式 API 设计的
+      基本属性。任何系统只要：
     </p>
     <ol>
-      <li>Uses a fixed tokenizer (so token lengths are predictable from vocabulary),</li>
-      <li>Streams tokens one-by-one over TLS, and</li>
-      <li>Uses a stream cipher that preserves plaintext length,</li>
+      <li>使用固定的分词器（因此令牌长度可从词汇表预测），</li>
+      <li>通过 TLS 逐一流式传输令牌，且</li>
+      <li>使用保留明文长度的流密码，</li>
     </ol>
     <p>
-      is vulnerable to this attack. The only mitigations that fully neutralize it are:
-      (a) adding deterministic padding to all tokens so they appear to be the same size,
-      or (b) batching multiple tokens per packet before encryption — both of which
-      increase latency and reduce the responsiveness that makes streaming valuable.
-      Cloudflare implemented per-token random padding at the CDN layer after Weiss et al.'s
-      disclosure, but residual information leakage was still demonstrated in follow-on work.
+      都容易受到此攻击。唯一能完全消除它的缓解措施是：
+      (a) 向所有令牌添加确定性填充使它们看起来大小相同，
+      或 (b) 在加密前将多个令牌批量打包到每个数据包中 — 这两种方法
+      都会增加延迟并降低使流式传输有价值的响应性。
+      Cloudflare 在 Weiss et al. 披露后在 CDN 层实现了每令牌随机填充，
+      但后续工作仍然展示了残余的信息泄露。
       <a class="cite" href="https://arxiv.org/html/2511.03675v1">[Whisper Leak citing Cloudflare mitigation]</a>
     </p>
 
-    <h3>Implications for Sensitive Deployments</h3>
+    <h3>对敏感部署的影响</h3>
     <p>
-      Any LLM deployed in healthcare, legal, financial, or government contexts that uses
-      streaming APIs is potentially leaking response content to anyone with network
-      visibility between the user and the provider. This includes corporate proxies,
-      VPN providers, ISPs, and potentially government surveillance infrastructure.
-      The appropriate security posture for highly sensitive deployments is to disable
-      streaming entirely (returning complete responses as a single packet) or to deploy
-      LLM inference on-premises with no external network exposure.
+      任何部署在医疗、法律、金融或政府环境中且使用流式 API 的 LLM，
+      都可能向用户与提供商之间具有网络可见性的任何人
+      泄露响应内容。这包括企业代理、
+      VPN 提供商、ISP 以及潜在的政府监控基础设施。
+      对于高度敏感部署的适当安全姿态是彻底禁用流式传输
+      （将完整响应作为单个数据包返回）或
+      在没有外部网络暴露的情况下在本地部署 LLM 推理。
     </p>
   </section>
 
   <!-- ═══════════════════════════════════════════════════════ SECTION 8 ══ -->
   <section class="section" id="s8">
     <span class="section-number">08</span>
-    <h2 id="timing-attacks-on-efficient-inference">Timing Attacks on Efficient Inference</h2>
+    <h2 id="timing-attacks-on-efficient-inference">针对高效推理的时序攻击</h2>
 
     <p>
-      Performance is competitive in the LLM serving market, and providers invest heavily in
-      inference optimization techniques. Two major categories — <strong>speculative
-      decoding</strong> and <strong>KV cache sharing</strong> — have been shown to introduce
-      exploitable side-channels that reveal private information about user inputs and
-      system configurations.
+      性能在 LLM 服务市场中具有竞争性，提供商大力投资于
+      推理优化技术。两大类别 — <strong>推测性解码</strong>
+      和 <strong>KV 缓存共享</strong> — 已被证明会引入
+      可利用的侧信道，泄露用户输入和系统配置的
+      私有信息。
     </p>
 
-    <h3>Speculative Decoding Side-Channels</h3>
+    <h3>推测性解码侧信道</h3>
     <p>
-      Speculative decoding accelerates LLM inference by having a small, cheap "draft model"
-      predict several tokens ahead, then having the large target model verify them in parallel.
-      When the draft model guesses correctly, multiple tokens are accepted in one verification
-      pass. When it guesses incorrectly, the model falls back to single-token autoregressive
-      generation. This accept/reject pattern is <strong>input-dependent</strong>: some
-      prompts will be decoded with many correct speculations (producing larger packets per
-      iteration), while others trigger many mis-speculations (smaller packets per iteration).
+      推测性解码通过让一个小型、廉价的"草稿模型"
+      提前预测几个令牌，然后让大型目标模型并行验证它们来加速 LLM 推理。
+      当草稿模型猜对时，多个令牌在一次验证传递中被接受。
+      当它猜错时，模型回退到单令牌自回归
+      生成。这种接受/拒绝模式是<strong>输入相关的</strong>：某些
+      提示将被解码出许多正确的推测（每次迭代产生更大的
+      数据包），而其他提示会触发许多错误推测（每次迭代产生更小的数据包）。
     </p>
     <p>
-      Wei et al. (2024) demonstrated that a passive network adversary observing packet
-      sizes per generation iteration can reconstruct this accept/reject trace, and use it
-      to fingerprint user queries with <strong>&gt;90% accuracy</strong> across four different
-      speculative decoding schemes.
+      Wei et al. (2024) 证明，一个观察每次生成迭代数据包大小的
+      被动网络对手可以重建这种接受/拒绝痕迹，并使用它
+      以 <strong>超过 90% 的准确率</strong> 对四种不同的推测性解码方案
+      中的用户查询进行指纹识别。
       <a class="cite" href="https://arxiv.org/html/2411.01076v3">[Wei et al., "When Speculation Spills Secrets," 2024]</a>
-      Specifically: REST achieved ~100% query identification accuracy, LADE reached 92%,
-      BiLD 95%, and even EAGLE on remote vLLM achieved 77.6% accuracy.
+      具体来说：REST 实现了约 100% 的查询识别准确率，LADE 达到 92%，
+      BiLD 达到 95%，甚至在远程 vLLM 上的 EAGLE 也达到了 77.6% 的准确率。
     </p>
     <p>
-      Beyond query fingerprinting, a malicious user with API access can also <strong>extract
-      private datastore contents</strong> used by retrieval-augmented speculative decoding
-      (e.g., REST): by crafting inputs designed to probe the datastore and observing which
-      tokens are correctly speculated, the attacker can leak datastore contents at more than
-      25 tokens per second. This is a particularly severe threat for RAG systems that include
-      proprietary or confidential documents in their retrieval corpus.
-    </p>
-
-    <h3>Carlini &amp; Nasr: Timing Variations from Inference Optimizations</h3>
-    <p>
-      Carlini &amp; Nasr (2024) demonstrated an earlier version of this class of attack,
-      showing that timing variations due to inference optimizations in commercial models
-      (GPT-4, Claude) can be exploited via packet inter-arrival times as a side-channel.
-      Their work established the threat model for this research area, though subsequent
-      research showed that inter-arrival time signals are considerably noisier than packet
-      size signals — the Wei et al. approach achieves 77.6% accuracy where Carlini &amp; Nasr's
-      approach achieves only 14.4% on the same vLLM setup.
+      除了查询指纹识别，具有 API 访问权限的恶意用户还可以<strong>提取
+      私有数据存储内容</strong>，这些内容被检索增强型推测性解码使用
+      （例如 REST）：通过精心构造用于探测数据存储的输入并观察哪些
+      令牌被正确推测，攻击者可以以每秒超过 25 个令牌的速度
+      泄露数据存储内容。这对于在检索语料库中包含
+      专有或机密文档的 RAG 系统来说是一个特别严重的威胁。
     </p>
 
-    <h3>InputSnatch: KV Cache Timing Attacks</h3>
+    <h3>Carlini &amp; Nasr：推理优化的时序变化</h3>
     <p>
-      A second class of timing side-channel exploits <strong>KV cache sharing</strong>.
-      Modern LLM inference backends (vLLM, TensorRT-LLM) implement prefix caching: if two
-      requests share a common prefix, the KV cache computed for that prefix is reused rather
-      than recomputed. This produces a measurable timing difference — a cache hit responds
-      noticeably faster than a cache miss.
+      Carlini &amp; Nasr (2024) 展示了此类攻击的早期版本，
+      表明商业模型（GPT-4, Claude）中推理优化导致的时序变化
+      可以通过数据包到达间隔时间作为侧信道加以利用。
+      他们的工作为这一研究领域建立了威胁模型，尽管后续
+      研究表明到达间隔时间信号比数据包大小信号
+      嘈杂得多 — Wei et al. 的方法在相同的 vLLM 设置上达到 77.6% 的准确率，
+      而 Carlini &amp; Nasr 的方法仅达到 14.4%。
+    </p>
+
+    <h3>InputSnatch：KV 缓存时序攻击</h3>
+    <p>
+      第二类时序侧信道利用了 <strong>KV 缓存共享</strong>。
+      现代 LLM 推理后端（vLLM, TensorRT-LLM）实现了前缀缓存：如果两个
+      请求共享一个公共前缀，则为该前缀计算的 KV 缓存会被重用
+      而非重新计算。这产生了可测量的时序差异 — 缓存命中的响应
+      明显快于缓存未命中。
       <a class="cite" href="https://arxiv.org/abs/2411.18191">[Zheng et al., "InputSnatch," arXiv 2411.18191, 2024]</a>
     </p>
     <p>
-      The <strong>InputSnatch</strong> attack by Zheng et al. (2024) exploits this
-      vulnerability to reconstruct other users' cached prompts. The attack works by
-      systematically querying the target service with candidate inputs and observing
-      whether the time-to-first-token (TTFT) indicates a cache hit. A cache hit reveals
-      that the candidate prefix matches another user's cached query. By iteratively
-      constructing increasingly long prefixes that match, the attacker can reconstruct
-      the victim user's exact prompt — even when the service uses HTTPS encryption.
+      Zheng et al. (2024) 的 <strong>InputSnatch</strong> 攻击利用此
+      漏洞重建其他用户缓存的提示。该攻击通过系统性地
+      使用候选输入查询目标服务并观察
+      首令牌时间（TTFT）是否指示缓存命中来工作。缓存命中表明
+      候选前缀与另一个用户的缓存查询匹配。通过迭代
+      构建越来越长的匹配前缀，攻击者可以重建
+      受害者用户的精确提示 — 即使服务使用 HTTPS 加密。
     </p>
     <p>
-      In experiments on a medical Q&amp;A chatbot with prefix caching, InputSnatch achieved
-      a <strong>62% success rate</strong> in extracting exact disease inputs and 13.5% for
-      precise symptom descriptions. For a legal consultation RAG system with semantic caching,
-      semantic extraction success rates ranged from <strong>43% to 100%</strong>.
+      在针对具有前缀缓存的医疗问答聊天机器人的实验中，InputSnatch 实现了
+      <strong>62% 的成功率</strong>来提取确切的疾病输入，以及 13.5% 用于
+      精确症状描述。对于具有语义缓存的法律咨询 RAG 系统，
+      语义提取成功率范围为 <strong>43% 到 100%</strong>。
     </p>
 
     <div class="attack-flow">
-<span class="step-label">InputSnatch Attack Flow:</span>
+<span class="step-label">InputSnatch 攻击流程：</span>
 
-[Attacker] ─── crafts candidate prefix "What are the symptoms of..." ──→ [LLM API]
+[攻击者] ─── 构造候选前缀 "What are the symptoms of..." ──→ [LLM API]
                                                                               │
-                                                                   Measure TTFT
+                                                                   测量 TTFT
                                                                               │
                                         ┌─────────────────────────────────────┘
                                         │
-                               TTFT &lt; threshold? ──→ YES → Cache HIT → prefix matches victim query
+                               TTFT &lt; 阈值？ ──→ 是 → 缓存命中 → 前缀与受害者查询匹配
                                         │
-                                       NO
+                                       否
                                         │
-                               TTFT ≥ threshold → Cache MISS → try next candidate
+                               TTFT ≥ 阈值 → 缓存未命中 → 尝试下一个候选
                                         │
-                               [iterate with ML-guided input constructor]
+                               [使用 ML 引导的输入构造器迭代]
                                         │
-                               Reconstruct full victim query from matched prefix segments
+                               从匹配的前缀片段重建完整受害者查询
     </div>
   </section>
 
   <!-- ═══════════════════════════════════════════════════════ SECTION 9 ══ -->
   <section class="section" id="s9">
     <span class="section-number">09</span>
-    <h2 id="tpuxtract-hardware-emanation-attacks">TPUXtract: Hardware Emanation Attacks</h2>
+    <h2 id="tpuxtract-hardware-emanation-attacks">TPUXtract：硬件辐射攻击</h2>
 
     <p>
-      All the attacks discussed so far operate at the API or network level. But there is
-      another attack surface entirely: the physical hardware running the model. Neural network
-      inference on specialized chips (TPUs, GPUs, NPUs) produces <strong>electromagnetic
-      (EM) emanations</strong> correlated with the operations being performed. An adversary
-      with physical proximity to the hardware — or even access to measurement equipment in
-      an adjacent rack in a data center — can use these emanations to infer the model's
-      architecture. This is <strong>TPUXtract</strong>.
+      到目前为止讨论的所有攻击都运行在 API 或网络层面。但还有
+      一个完全不同的攻击面：
+      运行模型的物理硬件。专用芯片
+      （TPU、GPU、NPU）上的神经网络推理会产生与正在执行的操作
+      相关的<strong>电磁（EM）辐射</strong>。对硬件具有物理接近度的攻击者
+      — 甚至在数据中心相邻机架上接触到测量设备的攻击者 —
+      可以利用这些辐射来推断模型的架构。这就是 <strong>TPUXtract</strong>。
       <a class="cite" href="https://www.keysight.com/blogs/en/tech/nwvs/2025/02/25/security-highlight-tpuxtract-a-new-side-channel-attack-on-neural-networks">[Keysight Security Blog, 2025]</a>
     </p>
 
-    <h3>Attack Methodology</h3>
+    <h3>攻击方法论</h3>
     <p>
-      The attack was demonstrated by researchers from North Carolina State University against
-      a Google Tensor Processing Unit (TPU). The fundamental observation is that TPU power
-      consumption varies measurably depending on the layer configuration being processed.
-      Different layer types (convolutional, fully connected, attention), different layer sizes,
-      and different connectivity patterns each produce distinct EM signatures.
+      该攻击由北卡罗来纳州立大学的研究人员针对 Google Tensor
+      Processing Unit (TPU) 演示。
+      基本观察是 TPU 的功耗根据正在处理的层配置
+      发生可测量的变化。不同的层类型（卷积、全连接、注意力）、不同的层大小
+      以及不同的连接模式各自产生独特的 EM 特征。
     </p>
     <p>
-      TPUXtract exploits the fact that in a neural network, data flows <em>sequentially</em>
-      through layers. The attacker measures the EM signal over time as the TPU processes an
-      input and correlates different time windows with the EM profiles expected for different
-      layer configurations. By matching the observed EM trace to a library of pre-characterized
-      layer profiles, the attacker reconstructs the model's architecture <em>one layer at
-      a time</em>.
+      TPUXtract 利用了这样一个事实：在神经网络中，数据<em>顺序</em>
+      流经各层。攻击者测量 TPU 处理输入时
+      随时间变化的 EM 信号，
+      并将不同的时间窗口与预期针对不同层配置的 EM 特征相关联。
+      通过将观察到的 EM 痕迹与预表征的层特征库进行匹配，
+      攻击者<em>逐层</em>重建模型的架构。
     </p>
     <p>
-      This layer-by-layer approach dramatically reduces search complexity compared to trying
-      to match the entire model at once. The attack achieved <strong>99.91% accuracy</strong>
-      in extracting neural network hyperparameters from the TPU.
+      这种逐层方法与试图一次性匹配整个模型相比，
+      大大降低了搜索复杂度。该攻击在从 TPU 提取神经网络超参数方面
+      达到了 <strong>99.91% 的准确率</strong>。
     </p>
 
-    <h3>What Can Be Extracted</h3>
+    <h3>可以提取什么</h3>
     <p>
-      TPUXtract can recover:
+      TPUXtract 可以恢复：
     </p>
     <ul>
-      <li><strong>Number of layers</strong> — the depth of the network</li>
-      <li><strong>Layer types</strong> — fully connected, convolutional, attention, normalization</li>
-      <li><strong>Layer dimensions</strong> — number of neurons/channels per layer</li>
-      <li><strong>Connectivity patterns</strong> — skip connections, attention heads</li>
+      <li><strong>层数</strong> — 网络的深度</li>
+      <li><strong>层类型</strong> — 全连接、卷积、注意力、归一化</li>
+      <li><strong>层维度</strong> — 每层的神经元/通道数</li>
+      <li><strong>连接模式</strong> — 跳跃连接、注意力头</li>
     </ul>
     <p>
-      Critically, TPUXtract does <em>not</em> recover model weights — the actual
-      numerical parameters learned during training. This is an important limitation:
-      knowing the architecture is like knowing the blueprint of a building without knowing
-      the furniture inside. However, knowing the architecture is enormously valuable:
-      it enables much more efficient model extraction via the API (the search space
-      for the surrogate is now dramatically constrained), it reveals proprietary
-      architectural innovations, and it provides a roadmap for targeted adversarial
-      attacks. For Transformer-based LLMs, full extraction requires additional steps
-      (nullifying weights of specific layers to isolate others), but the paper
-      demonstrates feasibility.
+      关键的是，TPUXtract <em>不</em>恢复模型权重 — 即训练期间学习的
+      实际数值参数。这是一个重要的限制：
+      知道架构就像知道建筑的蓝图而不知道
+      内部的家具。然而，知道架构具有巨大的价值：
+      它使得通过 API 进行更高效的模型提取成为可能（代理模型的搜索空间
+      现在被极大地约束），它揭示了专有的
+      架构创新，并为针对性的对抗攻击提供了路线图。
+      对于基于 Transformer 的 LLM，完整提取需要额外的步骤
+      （消零特定层的权重以隔离其他层），但论文
+      证明了可行性。
     </p>
 
-    <h3>Implications for Model IP Security</h3>
+    <h3>对模型知识产权安全的影响</h3>
     <p>
-      Cloud providers and hardware manufacturers have historically assumed that EM
-      emanations from accelerators are not exploitable in multi-tenant environments
-      because isolation between tenants should prevent physical access. TPUXtract challenges
-      this assumption: in co-location data centers, measurements from adjacent physical
-      hardware may suffice. More broadly, any organization running AI inference on hardware
-      that is not physically controlled end-to-end faces architectural secrecy risks.
-      Effective countermeasures include hardware-level EM shielding, noise injection
-      circuits, and power-consumption masking — all established techniques from the
-      cryptographic hardware security domain, now becoming relevant to AI deployments.
+      云提供商和硬件制造商历来假设加速器的 EM 辐射
+      在多租户环境中不可利用，
+      因为租户之间的隔离应阻止物理访问。TPUXtract 挑战了这一
+      假设：在共置数据中心，相邻物理硬件上的测量可能
+      就足够了。更广泛地说，任何在未完全端到端物理控制的硬件上
+      运行 AI 推理的组织都面临架构保密性风险。
+      有效的对策包括硬件级 EM 屏蔽、噪声注入
+      电路和功耗掩盖 — 所有这些都来自密码硬件安全领域的
+      成熟技术，现在变得与 AI 部署相关。
       <a class="cite" href="https://www.darkreading.com/vulnerabilities-threats/tpuxtract-attackers-steal-ai-models">[Dark Reading, 2024]</a>
     </p>
   </section>
@@ -1317,39 +1317,39 @@ PacketTrace = namedtuple(<span class="st">"PacketTrace"</span>, [<span class="st
   <!-- ══════════════════════════════════════════════════════ SECTION 10 ══ -->
   <section class="section" id="s10">
     <span class="section-number">10</span>
-    <h2 id="model-inversion">Model Inversion</h2>
+    <h2 id="model-inversion">模型反演</h2>
 
     <p>
-      Model inversion attacks reconstruct <em>representative inputs</em> from model outputs,
-      effectively running inference in reverse. Rather than asking "what does this model
-      predict for this input?", the attacker asks "what input does this model associate
-      with this prediction?" In the domain of facial recognition, model inversion can
-      reconstruct recognizable face images of training subjects from nothing but the model's
-      confidence scores — a profound privacy violation.
+      模型反演攻击从模型输出重建<em>有代表性的输入</em>，
+      实质上是在反向运行推理。攻击者不问"这个模型对
+      这个输入预测什么？"，而是问"这个模型将什么输入与
+      这个预测相关联？"在人脸识别领域，模型反演可以
+      仅凭模型的置信度分数重建训练对象的可识别人脸图像 —
+      这是严重的隐私侵犯。
     </p>
 
-    <h3>Fredrikson et al.: Face Reconstruction</h3>
+    <h3>Fredrikson et al.：人脸重建</h3>
     <p>
-      The seminal model inversion paper by <strong>Fredrikson, Jha, and Ristenpart (CCS 2015)</strong>
-      demonstrated that a facial recognition model trained on a set of named individuals
-      could be inverted to produce recognizable face images for any target individual whose
-      name is in the model's label space.
+      由 <strong>Fredrikson, Jha, and Ristenpart (CCS 2015)</strong> 撰写的开创性模型反演论文
+      证明，在一组具名个体上训练的人脸识别模型
+      可以被反演，为标签空间中任何目标个体
+      生成可识别的人脸图像。
       <a class="cite" href="https://rist.tech.cornell.edu/papers/mi-ccs.pdf">[Fredrikson et al., CCS 2015]</a>
-      The attack works by gradient-based optimization in the input space: starting from
-      random noise, the attacker iteratively adjusts the input to maximize the model's
-      confidence for the target label. The optimization converges to an input that is
-      highly recognizable as the target individual — even without ever seeing their actual
-      photo in the training set.
+      该攻击通过在输入空间中进行基于梯度的优化来工作：从
+      随机噪声开始，攻击者迭代调整输入以最大化模型对
+      目标标签的置信度。
+      优化收敛到一个高度可识别的
+      目标个体图像 — 即使从未在训练集中看到其真实照片。
     </p>
     <p>
-      This attack works because the model has encoded sufficient information about each
-      individual's facial features in its parameters to make confident predictions —
-      and gradient-based inversion can decode that information back into the image space.
-      The attack succeeded in producing face images that human evaluators could correctly
-      identify as the target individual at significantly above-chance rates.
+      这种攻击之所以有效，是因为模型在其参数中编码了关于每个
+      个体面部特征的足够信息以做出自信的预测 —
+      而基于梯度的反演可以将这些信息解码回图像空间。
+      该攻击成功地生成了人脸图像，人类评估者能够以
+      显著高于随机水平的正确率将其识别为目标个体。
     </p>
 
-    <h3>Gradient-Based Inversion Code</h3>
+    <h3>基于梯度的反演代码</h3>
 
 <pre><code><span class="kw">import</span> torch
 <span class="kw">import</span> torch.nn <span class="kw">as</span> nn
@@ -1366,23 +1366,23 @@ PacketTrace = namedtuple(<span class="st">"PacketTrace"</span>, [<span class="st
     reg_strength=<span class="nb">0.001</span>
 ):
     <span class="st">"""
-    White-box model inversion: reconstruct an input that maximally activates
-    target_class in the model's output.
+    白盒模型反演：重建一个最大程度激活模型输出中
+    target_class 的输入。
 
-    Args:
-        model         : PyTorch classification model (should output logits or log-probs)
-        target_class  : int, index of the class to invert
-        input_shape   : tuple, e.g. (1, 3, 64, 64) for a single RGB 64×64 image
-        n_iterations  : optimization steps
-        lr            : learning rate
-        reg_strength  : L2 regularization on input (prevents degenerate solutions)
+    参数：
+        model         : PyTorch 分类模型（应输出 logits 或 log-probs）
+        target_class  : int，要反演的类别索引
+        input_shape   : tuple，例如单张 RGB 64×64 图像为 (1, 3, 64, 64)
+        n_iterations  : 优化步数
+        lr            : 学习率
+        reg_strength  : 输入上的 L2 正则化（防止退化解）
 
-    Returns:
-        reconstructed_input : torch.Tensor of shape input_shape
+    返回：
+        reconstructed_input : 形状为 input_shape 的 torch.Tensor
     """</span>
     model.eval()
 
-    <span class="cm"># Initialize from random noise in [0, 1]</span>
+    <span class="cm"># 从 [0, 1] 范围内的随机噪声初始化</span>
     x = torch.rand(input_shape, requires_grad=<span class="kw">True</span>)
     optimizer = optim.Adam([x], lr=lr)
     criterion = nn.CrossEntropyLoss()
@@ -1395,10 +1395,10 @@ PacketTrace = namedtuple(<span class="st">"PacketTrace"</span>, [<span class="st
         <span class="cm"># Clamp input to valid image range</span>
         x_clamped = torch.clamp(x, <span class="nb">0.0</span>, <span class="nb">1.0</span>)
 
-        <span class="cm"># Forward pass through the target model</span>
+        <span class="cm"># 通过目标模型进行前向传播</span>
         logits = model(x_clamped)
 
-        <span class="cm"># Loss: maximize confidence for target_class + regularize for naturalness</span>
+        <span class="cm"># 损失：最大化 target_class 的置信度 + 正则化以保持自然</span>
         classification_loss = criterion(logits, target)
         regularization      = reg_strength * torch.norm(x_clamped, p=<span class="nb">2</span>)
         total_loss = classification_loss + regularization
@@ -1417,27 +1417,27 @@ PacketTrace = namedtuple(<span class="st">"PacketTrace"</span>, [<span class="st
 <span class="kw">def</span> <span class="fn">black_box_inversion</span>(model_query_fn, target_class, input_shape,
                          n_iterations=<span class="nb">5000</span>, population_size=<span class="nb">50</span>):
     <span class="st">"""
-    Black-box model inversion using natural evolution strategy (NES).
-    model_query_fn: callable that takes an input array and returns confidence scores.
-    Uses estimated gradients from score differences in random directions.
+    使用自然进化策略（NES）的黑盒模型反演。
+    model_query_fn: 接受输入数组并返回置信度分数的可调用对象。
+    使用来自随机方向分数差的估计梯度。
     """</span>
-    sigma = <span class="nb">0.1</span>    <span class="cm"># noise scale for gradient estimation</span>
-    lr    = <span class="nb">0.01</span>   <span class="cm"># learning rate</span>
+    sigma = <span class="nb">0.1</span>    <span class="cm"># 梯度估计的噪声尺度</span>
+    lr    = <span class="nb">0.01</span>   <span class="cm"># 学习率</span>
 
-    <span class="cm"># Start from mean of uniform distribution</span>
+    <span class="cm"># 从均匀分布的均值开始</span>
     x = np.random.uniform(<span class="nb">0</span>, <span class="nb">1</span>, input_shape).astype(np.float32)
 
     <span class="kw">for</span> step <span class="kw">in</span> range(n_iterations):
-        <span class="cm"># Estimate gradient via random perturbations</span>
+        <span class="cm"># 通过随机扰动估计梯度</span>
         noise = np.random.randn(population_size, *input_shape).astype(np.float32)
         rewards = np.zeros(population_size)
 
         <span class="kw">for</span> i, n <span class="kw">in</span> enumerate(noise):
             x_perturbed = np.clip(x + sigma * n, <span class="nb">0</span>, <span class="nb">1</span>)
             scores = model_query_fn(x_perturbed)
-            rewards[i] = scores[target_class]   <span class="cm"># maximize target class confidence</span>
+            rewards[i] = scores[target_class]   <span class="cm"># 最大化目标类别置信度</span>
 
-        <span class="cm"># NES gradient estimate</span>
+        <span class="cm"># NES 梯度估计</span>
         grad_estimate = np.mean(
             rewards[:, <span class="kw">None</span>, ...] * noise.reshape(population_size, -<span class="nb">1</span>),
             axis=<span class="nb">0</span>
@@ -1453,43 +1453,43 @@ PacketTrace = namedtuple(<span class="st">"PacketTrace"</span>, [<span class="st
 </code></pre>
 
     <p>
-      Modern model inversion attacks have become dramatically more powerful by
-      leveraging generative adversarial networks (GANs) and diffusion models as
-      prior knowledge of the input distribution. GAN-based inversion constrains
-      the search to the latent space of a GAN trained on the same domain, ensuring
-      reconstructed images are photorealistic and semantically valid. This approach
-      has achieved face reconstructions at 64×64 resolution that are recognizable
-      to human evaluators even against production facial recognition models.
+      现代模型反演攻击通过利用生成对抗网络（GAN）
+      和扩散模型作为
+      输入分布的先验知识，已经变得极其强大。基于 GAN 的反演将
+      搜索限制在同一领域训练的 GAN 的潜在空间中，确保
+      重建图像具有照片级真实感和语义有效性。这种方法
+      已经实现了 64×64 分辨率的人脸重建，即使针对生产级人脸识别模型，
+      人类评估者也能识别出来。
     </p>
   </section>
 
   <!-- ══════════════════════════════════════════════════════ SECTION 11 ══ -->
   <section class="section" id="s11">
     <span class="section-number">11</span>
-    <h2 id="defense-rate-limiting">Defense: Rate Limiting</h2>
+    <h2 id="defense-rate-limiting">防御：速率限制</h2>
 
     <p>
-      The simplest and most immediately deployable defense against model extraction is
-      <strong>rate limiting</strong>: constraining the number of queries any individual
-      user or IP address can make per unit time. Since model extraction requires
-      thousands to hundreds of thousands of API calls, a well-calibrated rate limit
-      dramatically increases the time and monetary cost of an attack, potentially
-      making it economically infeasible.
+      对抗模型提取最简单、最可立即部署的防御是
+      <strong>速率限制</strong>：限制任何单个用户或 IP 地址
+      在单位时间内可以进行的查询数量。由于模型提取需要
+      数千到数十万次 API 调用，恰当的速率限制
+      会极大地增加攻击的时间和金钱成本，可能
+      使其在经济上不可行。
     </p>
 
-    <h3>Adaptive Rate Limiting</h3>
+    <h3>自适应速率限制</h3>
     <p>
-      Static rate limits are a blunt instrument — they may block legitimate power users
-      while a sophisticated attacker distributes their queries across many accounts or
-      IP addresses. <strong>Adaptive rate limiting</strong> monitors behavioral signals
-      that distinguish legitimate use from extraction attempts and adjusts limits
-      dynamically. Extraction queries tend to be systematic (regularly spaced, covering
-      the input space in structured ways), whereas legitimate queries tend to be
-      irregular and semantically coherent. Per-user query budgets, anomaly detection
-      on query distributions, and progressive throttling create a layered defense.
+      静态速率限制是一种生硬的工具 — 它们可能阻止合法的重度用户，
+      而老练的攻击者将其查询分布在许多账户或
+      IP 地址之间。<strong>自适应速率限制</strong>监控
+      区分合法使用与提取尝试的行为信号并动态调整
+      限制。提取查询往往是系统性的（有规律间隔、以结构化方式
+      覆盖输入空间），而合法查询往往是不规则的
+      且语义连贯。每用户查询预算、查询分布上的异常检测
+      以及渐进式限流构成了分层防御。
     </p>
 
-    <h3>Implementation</h3>
+    <h3>实现</h3>
 
 <pre><code><span class="kw">import</span> time
 <span class="kw">import</span> collections
@@ -1500,29 +1500,29 @@ PacketTrace = namedtuple(<span class="st">"PacketTrace"</span>, [<span class="st
 
 <span class="kw">@dataclass</span>
 <span class="kw">class</span> <span class="nm">UserQueryRecord</span>:
-    <span class="st">"""Per-user state for extraction detection."""</span>
+    <span class="st">"""用于提取检测的每用户状态。"""</span>
     query_times:    Deque[float] = field(default_factory=<span class="kw">lambda</span>: collections.deque(maxlen=<span class="nb">1000</span>))
     query_count:    int = <span class="nb">0</span>
     flagged_count:  int = <span class="nb">0</span>
-    throttle_until: float = <span class="nb">0.0</span>    <span class="cm"># Unix timestamp when throttling expires</span>
+    throttle_until: float = <span class="nb">0.0</span>    <span class="cm"># 限流过期的 Unix 时间戳</span>
 
 
 <span class="kw">class</span> <span class="nm">AdaptiveRateLimiter</span>:
     <span class="st">"""
-    Adaptive rate limiter that detects extraction-like query patterns.
-    Implements:
-      1. Hard per-minute rate limit
-      2. Daily budget per user
-      3. Regularity anomaly detection (extraction queries are too regular)
-      4. Progressive throttling on suspicious users
+    检测类似提取的查询模式的自适应速率限制器。
+    实现：
+      1. 硬性每分钟速率限制
+      2. 每用户每日预算
+      3. 规律性异常检测（提取查询过于规律）
+      4. 对可疑用户进行渐进式限流
     """</span>
 
     <span class="kw">def</span> <span class="fn">__init__</span>(
         self,
         hard_limit_per_minute=<span class="nb">60</span>,
         daily_budget=<span class="nb">5000</span>,
-        regularity_threshold=<span class="nb">0.15</span>,    <span class="cm"># coefficient of variation below which = suspicious</span>
-        throttle_multiplier=<span class="nb">4.0</span>        <span class="cm"># slow down suspicious users by this factor</span>
+        regularity_threshold=<span class="nb">0.15</span>,    <span class="cm"># 低于此变异系数 = 可疑</span>
+        throttle_multiplier=<span class="nb">4.0</span>        <span class="cm"># 按此因子减慢可疑用户速度</span>
     ):
         self.hard_limit_per_minute = hard_limit_per_minute
         self.daily_budget          = daily_budget
@@ -1543,14 +1543,14 @@ PacketTrace = namedtuple(<span class="st">"PacketTrace"</span>, [<span class="st
 
     <span class="kw">def</span> <span class="fn">_is_too_regular</span>(self, record: UserQueryRecord) -> bool:
         <span class="st">"""
-        Extraction bots tend to query at very regular intervals.
-        Compute coefficient of variation (CV) of inter-query intervals.
-        Low CV (regular) → flag as suspicious.
+        提取机器人倾向于以非常规律的间隔进行查询。
+        计算查询间隔的变异系数（CV）。
+        低 CV（规律）→ 标记为可疑。
         """</span>
         times = list(record.query_times)
         <span class="kw">if</span> len(times) &lt; <span class="nb">20</span>:
-            <span class="kw">return</span> <span class="kw">False</span>   <span class="cm"># insufficient data</span>
-        intervals = np.diff(sorted(times[-<span class="nb">50</span>:]))   <span class="cm"># last 50 queries</span>
+            <span class="kw">return</span> <span class="kw">False</span>   <span class="cm"># 数据不足</span>
+        intervals = np.diff(sorted(times[-<span class="nb">50</span>:]))   <span class="cm"># 最近 50 次查询</span>
         <span class="kw">if</span> len(intervals) == <span class="nb">0</span> <span class="kw">or</span> np.mean(intervals) == <span class="nb">0</span>:
             <span class="kw">return</span> <span class="kw">False</span>
         cv = np.std(intervals) / np.mean(intervals)
@@ -1558,14 +1558,14 @@ PacketTrace = namedtuple(<span class="st">"PacketTrace"</span>, [<span class="st
 
     <span class="kw">def</span> <span class="fn">check_and_record</span>(self, user_id: str) -> dict:
         <span class="st">"""
-        Check whether a query from user_id should be allowed.
-        Returns {"allowed": bool, "reason": str, "throttle_remaining": float}
-        Records the query time if allowed.
+        检查是否应允许来自 user_id 的查询。
+        返回 {"allowed": bool, "reason": str, "throttle_remaining": float}
+        如果允许，则记录查询时间。
         """</span>
         record = self._get_user(user_id)
         now    = time.time()
 
-        <span class="cm"># 1. Check if user is currently under active throttle</span>
+        <span class="cm"># 1. 检查用户是否当前处于活跃限流状态</span>
         <span class="kw">if</span> now &lt; record.throttle_until:
             <span class="kw">return</span> {
                 <span class="st">"allowed"</span>: <span class="kw">False</span>,
@@ -1573,7 +1573,7 @@ PacketTrace = namedtuple(<span class="st">"PacketTrace"</span>, [<span class="st
                 <span class="st">"throttle_remaining"</span>: record.throttle_until - now
             }
 
-        <span class="cm"># 2. Check hard per-minute rate limit</span>
+        <span class="cm"># 2. 检查硬性每分钟速率限制</span>
         <span class="kw">if</span> self._queries_last_minute(record) >= self.hard_limit_per_minute:
             <span class="kw">return</span> {
                 <span class="st">"allowed"</span>: <span class="kw">False</span>,
@@ -1581,7 +1581,7 @@ PacketTrace = namedtuple(<span class="st">"PacketTrace"</span>, [<span class="st
                 <span class="st">"throttle_remaining"</span>: <span class="nb">0</span>
             }
 
-        <span class="cm"># 3. Check daily budget</span>
+        <span class="cm"># 3. 检查每日预算</span>
         <span class="kw">if</span> record.query_count >= self.daily_budget:
             <span class="kw">return</span> {
                 <span class="st">"allowed"</span>: <span class="kw">False</span>,
@@ -1589,11 +1589,11 @@ PacketTrace = namedtuple(<span class="st">"PacketTrace"</span>, [<span class="st
                 <span class="st">"throttle_remaining"</span>: <span class="nb">0</span>
             }
 
-        <span class="cm"># 4. Check for extraction-like regularity</span>
+        <span class="cm"># 4. 检查类似提取的规律性</span>
         suspicious = self._is_too_regular(record)
         <span class="kw">if</span> suspicious:
             record.flagged_count += <span class="nb">1</span>
-            <span class="cm"># Progressive: each flag doubles the throttle window</span>
+            <span class="cm"># 渐进式：每次标记使限流窗口翻倍</span>
             throttle_seconds = min(<span class="nb">60</span> * self.throttle_multiplier ** record.flagged_count, <span class="nb">86400</span>)
             record.throttle_until = now + throttle_seconds
             <span class="kw">return</span> {
@@ -1602,58 +1602,58 @@ PacketTrace = namedtuple(<span class="st">"PacketTrace"</span>, [<span class="st
                 <span class="st">"throttle_remaining"</span>: throttle_seconds
             }
 
-        <span class="cm"># 5. Allow: record the query</span>
+        <span class="cm"># 5. 允许：记录查询</span>
         record.query_times.append(now)
         record.query_count += <span class="nb">1</span>
         <span class="kw">return</span> {"allowed": <span class="kw">True</span>, <span class="st">"reason"</span>: <span class="st">"ok"</span>, <span class="st">"throttle_remaining"</span>: <span class="nb">0</span>}
 </code></pre>
 
     <div class="callout callout-tip">
-      <strong>Defense-in-Depth</strong>
-      Rate limiting alone is insufficient against a patient, distributed attacker. Combine
-      it with output perturbation (Section 12) and watermarking (Section 13) for layered
-      defense. An attacker who gets past rate limiting should still receive perturbed
-      outputs, and any resulting surrogate model should carry a detectable watermark.
+      <strong>纵深防御</strong>
+      仅靠速率限制不足以应对耐心且分布式的攻击者。将其
+      与输出扰动（第 12 节）和水印（第 13 节）结合以形成分层
+      防御。通过速率限制的攻击者仍应收到扰动后的
+      输出，并且任何产生的代理模型应携带可检测的水印。
     </div>
   </section>
 
   <!-- ══════════════════════════════════════════════════════ SECTION 12 ══ -->
   <section class="section" id="s12">
     <span class="section-number">12</span>
-    <h2 id="defense-output-perturbation">Defense: Output Perturbation</h2>
+    <h2 id="defense-output-perturbation">防御：输出扰动</h2>
 
     <p>
-      Even if an attacker successfully collects thousands of query-response pairs, the
-      fidelity of their surrogate model depends on the quality of those labels. If the
-      target model's outputs are perturbed — by adding calibrated noise, rounding
-      confidence scores, or restricting the output to top-k classes — the surrogate
-      trains on corrupted supervision and degrades in quality. The art of output
-      perturbation is to add enough noise to impede extraction while preserving
-      enough signal to maintain utility for legitimate users.
+      即使攻击者成功收集了数千个查询-响应对，其
+      代理模型的保真度仍取决于这些标签的质量。如果
+      目标模型的输出被扰动 — 通过添加校准噪声、舍入
+      置信度分数或限制输出为前 k 个类别 — 代理模型
+      将在被破坏的监督信号上训练并降低质量。输出扰动的
+      艺术在于添加足够的噪声以阻碍提取，同时保留
+      足够的信号以维持对合法用户的实用性。
     </p>
 
-    <h3>Differential Privacy Mechanisms for Output</h3>
+    <h3>输出的差分隐私机制</h3>
     <p>
-      The <strong>Laplace mechanism</strong> and <strong>Gaussian mechanism</strong>
-      from differential privacy theory provide principled ways to add output noise
-      with formal guarantees. For a model returning a probability vector in <code>[0,1]^k</code>,
-      adding Laplace noise with scale <code>Δf / ε</code> (where <code>Δf</code> is the
-      L1 sensitivity of the output function and <code>ε</code> is the privacy parameter)
-      ensures (ε, 0)-differential privacy. In practice, the sensitivity of a softmax
-      output is 2 (bounded range), so the noise scale is <code>2/ε</code>.
+      差分隐私理论中的<strong>拉普拉斯机制</strong>和<strong>高斯机制</strong>
+      提供了添加输出噪声的原则性方法，
+      具有形式化保证。对于返回 <code>[0,1]^k</code> 中概率向量的模型，
+      添加尺度为 <code>Δf / ε</code>（其中 <code>Δf</code> 是
+      输出函数的 L1 敏感度，<code>ε</code> 是隐私参数）的拉普拉斯噪声
+      确保 (ε, 0)-差分隐私。在实践中，softmax 输出的敏感度
+      为 2（有界范围），因此噪声尺度为 <code>2/ε</code>。
     </p>
 
-    <h3>Confidence Score Rounding and Top-k Restriction</h3>
+    <h3>置信度分数舍入和 Top-k 限制</h3>
     <p>
-      A simpler, non-probabilistic approach is <strong>confidence score rounding</strong>:
-      returning probabilities rounded to 2 decimal places instead of 8. This dramatically
-      reduces the information content of each query response while preserving the ordinal
-      ranking of classes (which is what most legitimate users need). <strong>Top-k
-      restriction</strong> returns only the top k predictions rather than the full
-      distribution, further limiting the information available to a surrogate model.
+      一种更简单、非概率的方法是<strong>置信度分数舍入</strong>：
+      返回舍入到 2 位小数的概率而不是 8 位。这极大地
+      减少了每个查询响应的信息内容，同时保留了类别的
+      序数排名（这是大多数合法用户所需要的）。<strong>Top-k
+      限制</strong>仅返回前 k 个预测而不是完整的分布，
+      进一步限制了代理模型可用的信息。
     </p>
 
-    <h3>Implementation</h3>
+    <h3>实现</h3>
 
 <pre><code><span class="kw">import</span> numpy <span class="kw">as</span> np
 <span class="kw">from</span> scipy.special <span class="kw">import</span> softmax
@@ -1661,27 +1661,27 @@ PacketTrace = namedtuple(<span class="st">"PacketTrace"</span>, [<span class="st
 
 <span class="kw">class</span> <span class="nm">OutputPerturbationDefense</span>:
     <span class="st">"""
-    Defends against model extraction by perturbing model outputs before
-    returning them to the user.
+    通过在返回给用户之前扰动模型输出，
+    防御模型提取。
 
-    Supports three strategies:
-      - 'laplace'  : Add Laplace noise (differential privacy)
-      - 'rounding' : Round confidences to d decimal places
-      - 'topk'     : Return only top-k predictions
+    支持三种策略：
+      - 'laplace'  : 添加拉普拉斯噪声（差分隐私）
+      - 'rounding' : 将置信度舍入到 d 位小数
+      - 'topk'     : 仅返回前 k 个预测
     """</span>
 
     <span class="kw">def</span> <span class="fn">__init__</span>(self, strategy=<span class="st">'laplace'</span>, epsilon=<span class="nb">1.0</span>, decimal_places=<span class="nb">2</span>, top_k=<span class="nb">3</span>):
         <span class="kw">assert</span> strategy <span class="kw">in</span> (<span class="st">'laplace'</span>, <span class="st">'gaussian'</span>, <span class="st">'rounding'</span>, <span class="st">'topk'</span>)
         self.strategy       = strategy
-        self.epsilon        = epsilon          <span class="cm"># privacy budget (smaller = more noise)</span>
+        self.epsilon        = epsilon          <span class="cm"># 隐私预算（越小 = 噪声越大）</span>
         self.decimal_places = decimal_places
         self.top_k          = top_k
 
     <span class="kw">def</span> <span class="fn">perturb</span>(self, probabilities: np.ndarray) -> np.ndarray:
         <span class="st">"""
-        Apply output perturbation to a probability vector.
-        probabilities: np.ndarray of shape (n_classes,), summing to 1.
-        Returns perturbed probabilities (not necessarily summing to 1 for noisy methods).
+        对概率向量应用输出扰动。
+        probabilities: 形状为 (n_classes,) 的 np.ndarray，求和为 1。
+        返回扰动后的概率（对于噪声方法不一定求和为 1）。
         """</span>
         proba = np.asarray(probabilities, dtype=np.float64)
 
@@ -1696,25 +1696,25 @@ PacketTrace = namedtuple(<span class="st">"PacketTrace"</span>, [<span class="st
 
     <span class="kw">def</span> <span class="fn">_laplace_mechanism</span>(self, proba):
         <span class="st">"""
-        Add Laplace noise with scale = sensitivity / epsilon.
-        For probability vectors, L1 sensitivity is 2.
-        After noise addition, re-normalize and clip to [0, 1].
+        添加尺度为 sensitivity / epsilon 的拉普拉斯噪声。
+        对于概率向量，L1 敏感度为 2。
+        噪声添加后，重新归一化并裁剪到 [0, 1]。
         """</span>
-        sensitivity = <span class="nb">2.0</span>   <span class="cm"># L1 sensitivity of softmax output</span>
+        sensitivity = <span class="nb">2.0</span>   <span class="cm"># softmax 输出的 L1 敏感度</span>
         scale = sensitivity / self.epsilon
         noise = np.random.laplace(loc=<span class="nb">0.0</span>, scale=scale, size=proba.shape)
         noisy = np.clip(proba + noise, <span class="nb">0.0</span>, <span class="nb">1.0</span>)
-        <span class="cm"># Re-normalize to sum to 1 (project onto probability simplex)</span>
+        <span class="cm"># 重新归一化使总和为 1（投影到概率单纯形）</span>
         total = noisy.sum()
         <span class="kw">return</span> noisy / total <span class="kw">if</span> total > <span class="nb">0</span> <span class="kw">else</span> np.ones_like(noisy) / len(noisy)
 
     <span class="kw">def</span> <span class="fn">_gaussian_mechanism</span>(self, proba):
         <span class="st">"""
-        Gaussian mechanism with (epsilon, delta)-DP guarantee.
-        Uses delta=1e-5 by default; sigma calibrated to L2 sensitivity.
+        具有 (epsilon, delta)-DP 保证的高斯机制。
+        默认使用 delta=1e-5；sigma 根据 L2 敏感度校准。
         """</span>
         delta = <span class="nb">1e-5</span>
-        l2_sensitivity = np.sqrt(<span class="nb">2</span>)           <span class="cm"># L2 sensitivity of probability vector</span>
+        l2_sensitivity = np.sqrt(<span class="nb">2</span>)           <span class="cm"># 概率向量的 L2 敏感度</span>
         sigma = l2_sensitivity * np.sqrt(<span class="nb">2</span> * np.log(<span class="nb">1.25</span> / delta)) / self.epsilon
         noise = np.random.normal(<span class="nb">0</span>, sigma, proba.shape)
         noisy = np.clip(proba + noise, <span class="nb">0.0</span>, <span class="nb">1.0</span>)
@@ -1722,15 +1722,15 @@ PacketTrace = namedtuple(<span class="st">"PacketTrace"</span>, [<span class="st
         <span class="kw">return</span> noisy / total <span class="kw">if</span> total > <span class="nb">0</span> <span class="kw">else</span> np.ones_like(noisy) / len(noisy)
 
     <span class="kw">def</span> <span class="fn">_rounding</span>(self, proba):
-        <span class="st">"""Round each probability to d decimal places, then renormalize."""</span>
+        <span class="st">"""将每个概率舍入到 d 位小数，然后重新归一化。"""</span>
         rounded = np.round(proba, self.decimal_places)
         total   = rounded.sum()
         <span class="kw">return</span> rounded / total <span class="kw">if</span> total > <span class="nb">0</span> <span class="kw">else</span> np.ones_like(rounded) / len(rounded)
 
     <span class="kw">def</span> <span class="fn">_topk_restriction</span>(self, proba):
         <span class="st">"""
-        Zero out all but the top-k classes and renormalize.
-        Returns a sparse vector with at most k non-zero entries.
+        将除前 k 个类别之外的所有类别置零并重新归一化。
+        返回最多有 k 个非零条目的稀疏向量。
         """</span>
         k = min(self.top_k, len(proba))
         result = np.zeros_like(proba)
@@ -1740,7 +1740,7 @@ PacketTrace = namedtuple(<span class="st">"PacketTrace"</span>, [<span class="st
         <span class="kw">return</span> result / total <span class="kw">if</span> total > <span class="nb">0</span> <span class="kw">else</span> result
 
 
-<span class="cm"># ── Privacy-utility tradeoff demonstration ──────────────────────────────</span>
+<span class="cm"># ── 隐私-效用权衡演示 ────────────────────────────────────────────────────</span>
 <span class="kw">if</span> __name__ == <span class="st">"__main__"</span>:
     original_proba = np.array([<span class="nb">0.70</span>, <span class="nb">0.20</span>, <span class="nb">0.07</span>, <span class="nb">0.03</span>])
 
@@ -1751,108 +1751,108 @@ PacketTrace = namedtuple(<span class="st">"PacketTrace"</span>, [<span class="st
 </code></pre>
 
     <p>
-      The key tradeoff: smaller <code>ε</code> means more noise (stronger privacy, worse
-      utility). For most commercial models, <code>ε = 1.0</code> to <code>ε = 5.0</code>
-      represents a practical operating range — sufficient noise to degrade a surrogate's
-      training signal by 15–30% while keeping prediction accuracy for legitimate users
-      within acceptable bounds.
+      关键权衡：较小的 <code>ε</code> 意味着更多噪声（更强的隐私性，较差的
+      效用）。对于大多数商业模型，<code>ε = 1.0</code> 到 <code>ε = 5.0</code>
+      代表了一个实用的操作范围 — 足够的噪声可将代理模型的
+      训练信号降低 15–30%，同时将合法用户的预测准确率
+      保持在可接受的范围内。
     </p>
   </section>
 
   <!-- ══════════════════════════════════════════════════════ SECTION 13 ══ -->
   <section class="section" id="s13">
     <span class="section-number">13</span>
-    <h2 id="defense-model-watermarking">Defense: Model Watermarking</h2>
+    <h2 id="defense-model-watermarking">防御：模型水印</h2>
 
     <p>
-      Rate limiting and output perturbation try to prevent extraction. <strong>Model
-      watermarking</strong> takes a different approach: it assumes extraction may occur
-      and embeds a <em>verifiable signature</em> in the model's behavior that persists
-      into the surrogate, allowing the original model owner to <em>prove</em> that a
-      suspected stolen model was derived from their source model.
+      速率限制和输出扰动试图阻止提取。<strong>模型水印</strong>
+      采取了不同的方法：它假设提取可能发生，
+      并在模型行为中嵌入一个<em>可验证的签名</em>，该签名会持续
+      保留到代理模型中，允许原始模型所有者<em>证明</em>一个
+      可疑的被盗模型源自其源模型。
       <a class="cite" href="https://arxiv.org/html/2411.05051v1">[Survey: IP Protection for Deep Learning, arXiv 2411.05051, 2024]</a>
     </p>
 
-    <h3>Backdoor-Based Watermarking</h3>
+    <h3>基于后门的水印</h3>
     <p>
-      The most widely deployed watermarking technique introduces a <strong>secret trigger
-      set</strong>: a small collection of carefully crafted input-output pairs that the
-      model is trained to respond to in a specific, unusual way. For example, a facial
-      recognition model might be watermarked to classify images containing a specific
-      subtle texture pattern as a designated "watermark class" with very high confidence.
-      A legitimate copy of the model (including any surrogate trained via knowledge
-      distillation on the original's outputs) will also exhibit this behavior, because
-      the attacker's training queries included these trigger inputs and the attacker
-      faithfully copied the corresponding responses. When the model owner suspects
-      a stolen copy, they query it with the trigger set and check for the expected
-      watermark behavior.
+      最广泛部署的水印技术引入一个<strong>秘密触发
+      集</strong>：一小部分精心制作的输入-输出对，模型被训练成
+      以一种特定的、不寻常的方式对其做出响应。例如，一个人脸
+      识别模型可能被加水印，以极高的置信度将包含特定
+      微妙纹理模式的图像分类为指定的"水印类别"。
+      模型的合法副本（包括通过在原始输出的知识蒸馏上
+      训练的任何代理模型）也会表现出这种行为，因为
+      攻击者的训练查询包含了这些触发输入，并且攻击者
+      忠实地复制了相应的响应。当模型所有者怀疑
+      存在被盗副本时，他们用触发集查询它并检查预期的
+      水印行为。
     </p>
 
-    <h3>Parameter-Space Watermarking</h3>
+    <h3>参数空间水印</h3>
     <p>
-      White-box watermarking embeds signatures directly into model weights rather than
-      behavior. Uchida et al. (2017) proposed embedding a bit string into the distribution
-      of weight values in a specific layer using a regularization term during training.
-      The watermark can be extracted by computing the inner product of the weight vector
-      with a secret key matrix. This approach is more robust to model modifications
-      (fine-tuning, pruning) than backdoor-based approaches, but requires access to the
-      model's internal weights for verification — which is only possible if the attacker
-      makes their surrogate available for inspection.
+      白盒水印直接将签名嵌入模型权重而非
+      行为。Uchida et al. (2017) 提出使用训练期间的正则化项
+      将位字符串嵌入特定层权重值的分布中。
+      水印可以通过计算权重向量与密钥矩阵的内积
+      来提取。这种方法比基于后门的方法对模型修改
+      （微调、剪枝）更加鲁棒，但需要访问模型的内部权重
+      进行验证 — 这只有在攻击者提供其代理模型供检查时
+      才有可能。
     </p>
 
-    <h3>Limitations and Active Research</h3>
+    <h3>局限性和活跃研究</h3>
     <p>
-      Watermarking faces several fundamental challenges. First, a determined adversary
-      who knows a watermark exists can attempt to remove it through fine-tuning, model
-      pruning, or knowledge distillation into a fresh model. Second, backdoor-based
-      watermarks introduce a genuine security vulnerability — if the trigger pattern
-      is discovered, it can be used to manipulate the model's behavior. Third,
-      watermarks provide attribution after the fact but do not prevent the initial
-      harm of extraction. Nonetheless, for IP litigation purposes, a robust watermark
-      that survives extraction and is demonstrably non-trivially correlated with the
-      victim model provides strong legal evidence of theft.
+      水印面临几个根本性挑战。首先，知道水印存在的
+      坚定攻击者可以尝试通过微调、模型剪枝或将知识
+      蒸馏到一个全新模型中来移除它。其次，基于后门的
+      水印引入了真正的安全漏洞 — 如果触发模式
+      被发现，它可以被用来操纵模型的行为。第三，
+      水印提供了事后归因，但并不能阻止提取的初始
+      损害。尽管如此，出于知识产权诉讼的目的，一个能够
+      在提取后幸存并且与被受害者模型具有可证明的非平凡相关性的
+      鲁棒水印提供了强有力的盗窃法律证据。
     </p>
     <p>
-      Recent work on <strong>radioactive data</strong> — poisoning training data with
-      imperceptible perturbations that propagate into models trained on it — offers an
-      alternative watermarking approach that operates at the data rather than model level,
-      providing attribution even when the attacker trains a completely fresh model from
-      stolen training data rather than distilling from the API.
+      最近关于<strong>放射性数据</strong>的工作 — 用不可察觉的扰动污染训练数据，
+      这些扰动会传播到在其上训练的模型中 — 提供了一种
+      替代性的水印方法，它在数据层面而非模型层面运作，
+      即使攻击者从被盗训练数据而非从 API 蒸馏中训练
+      一个全新的模型，也能提供归因。
     </p>
   </section>
 
   <!-- ══════════════════════════════════════════════════════ SECTION 14 ══ -->
   <section class="section" id="s14">
     <span class="section-number">14</span>
-    <h2 id="api-monitoring-for-extraction-attempts">API Monitoring for Extraction Attempts</h2>
+    <h2 id="api-monitoring-for-extraction-attempts">针对提取尝试的 API 监控</h2>
 
     <p>
-      A well-instrumented API can detect model extraction in progress by monitoring
-      behavioral anomalies. Legitimate API users exhibit characteristic usage patterns
-      (bursty queries related to specific use cases, natural language diversity in NLP
-      applications, predictable diurnal patterns) that differ from extraction attacks
-      (systematic coverage of the input space, high query volumes, mechanically generated
-      inputs, low semantic diversity). Effective API monitoring combines statistical
-      anomaly detection with domain-specific extraction heuristics.
+      一个检测工具完善的 API 可以通过监控行为异常来检测正在进行的模型提取。
+      合法 API 用户表现出特有的使用模式
+      （与特定用例相关的突发查询、NLP 应用中的自然语言多样性、
+      可预测的日间模式），这些模式与提取攻击不同
+      （对输入空间的系统性覆盖、高查询量、机械生成的
+      输入、低语义多样性）。有效的 API 监控将统计
+      异常检测与特定领域的提取启发式方法相结合。
     </p>
 
-    <h3>Extraction Behavioral Signatures</h3>
+    <h3>提取行为特征</h3>
     <ul>
-      <li><strong>Unusual query distributions</strong>: extraction queries tend to cover
-        the input domain uniformly or along specific information-theoretic criteria,
-        producing input distributions quite different from natural use.</li>
-      <li><strong>High query velocity</strong>: API calls at near-maximum rate from a
-        single account or correlated accounts.</li>
-      <li><strong>Low semantic coherence</strong>: for NLP models, extraction queries
-        may include partially randomized text, edge-case inputs, or grammatically
-        unusual constructions that wouldn't arise from genuine user needs.</li>
-      <li><strong>Absence of feedback patterns</strong>: legitimate users typically
-        follow up errors or low-confidence responses. Extraction bots often don't.</li>
-      <li><strong>Cross-account coordination</strong>: multiple accounts with similar
-        query patterns or querying complementary regions of the input space.</li>
+      <li><strong>不寻常的查询分布</strong>：提取查询倾向于均匀覆盖
+        输入域或沿特定信息论标准覆盖，
+        产生的输入分布与自然使用截然不同。</li>
+      <li><strong>高查询速率</strong>：来自单个账户或关联账户的
+        接近最大速率的 API 调用。</li>
+      <li><strong>低语义连贯性</strong>：对于 NLP 模型，提取查询
+        可能包含部分随机化的文本、边缘情况输入或语法
+        不寻常的结构，这些不会来自真实的用户需求。</li>
+      <li><strong>缺乏反馈模式</strong>：合法用户通常会对错误或低置信度响应
+        进行后续跟进。提取机器人通常不会。</li>
+      <li><strong>跨账户协调</strong>：多个账户具有相似的
+        查询模式或查询输入空间的互补区域。</li>
     </ul>
 
-    <h3>Anomaly Detection Implementation</h3>
+    <h3>异常检测实现</h3>
 
 <pre><code><span class="kw">import</span> numpy <span class="kw">as</span> np
 <span class="kw">from</span> sklearn.ensemble <span class="kw">import</span> IsolationForest
@@ -1863,32 +1863,32 @@ PacketTrace = namedtuple(<span class="st">"PacketTrace"</span>, [<span class="st
 
 <span class="kw">class</span> <span class="nm">ExtractionDetector</span>:
     <span class="st">"""
-    Anomaly-based detector for model extraction attempts.
-    Builds a feature vector per user session from query statistics
-    and uses Isolation Forest to identify anomalous usage patterns.
+    基于异常的模型提取尝试检测器。
+    从查询统计信息为每个用户会话构建特征向量，
+    并使用孤立森林识别异常使用模式。
     """</span>
 
     <span class="kw">def</span> <span class="fn">__init__</span>(self, window_size=<span class="nb">100</span>, contamination=<span class="nb">0.05</span>):
         <span class="st">"""
-        window_size   : number of recent queries to consider per user
-        contamination : expected fraction of anomalous users (for IsolationForest)
+        window_size   : 每用户要考虑的最近查询数
+        contamination : 异常用户的预期比例（用于 IsolationForest）
         """</span>
         self.window_size   = window_size
         self.detector      = IsolationForest(contamination=contamination, random_state=<span class="nb">42</span>)
         self.scaler        = StandardScaler()
-        self.user_history  = collections.defaultdict(list)   <span class="cm"># user_id -> [query_features]</span>
+        self.user_history  = collections.defaultdict(list)   <span class="cm"># user_id -> [查询特征]</span>
         self._fitted       = <span class="kw">False</span>
 
     <span class="kw">def</span> <span class="fn">_compute_session_features</span>(self, user_id: str) -> np.ndarray:
         <span class="st">"""
-        Compute a feature vector summarizing a user's recent query behavior.
-        Features:
-          0: queries_per_minute  (last window)
-          1: inter_query_cv      (coefficient of variation of intervals)
-          2: input_entropy       (diversity of input lengths)
-          3: confidence_mean     (avg model confidence — low for adversarial inputs)
-          4: confidence_cv       (variation in model confidence)
-          5: unique_input_ratio  (fraction of distinct inputs — high for extraction)
+        计算总结用户最近查询行为的特征向量。
+        特征：
+          0: queries_per_minute  （每分钟查询数，最近窗口内）
+          1: inter_query_cv      （间隔的变异系数）
+          2: input_entropy       （输入长度的多样性）
+          3: confidence_mean     （平均模型置信度 — 对抗输入较低）
+          4: confidence_cv       （模型置信度的变异）
+          5: unique_input_ratio  （不同输入的比例 — 提取时较高）
         """</span>
         history = self.user_history[user_id][-self.window_size:]
         n = len(history)
@@ -1902,30 +1902,30 @@ PacketTrace = namedtuple(<span class="st">"PacketTrace"</span>, [<span class="st
 
         intervals = np.diff(sorted(timestamps))
 
-        <span class="cm"># Feature 0: query rate (queries per minute in the observed window)</span>
+        <span class="cm"># 特征 0：查询速率（观察窗口内每分钟查询数）</span>
         time_span = timestamps.max() - timestamps.min()
         qpm = (n / time_span * <span class="nb">60</span>) <span class="kw">if</span> time_span > <span class="nb">0</span> <span class="kw">else</span> <span class="nb">0</span>
 
-        <span class="cm"># Feature 1: inter-query interval regularity (extraction bots → low CV)</span>
+        <span class="cm"># 特征 1：查询间隔规律性（提取机器人 → 低 CV）</span>
         cv_intervals = (np.std(intervals) / np.mean(intervals)) <span class="kw">if</span> np.mean(intervals) > <span class="nb">0</span> <span class="kw">else</span> <span class="nb">0</span>
 
-        <span class="cm"># Feature 2: entropy of input lengths (systematic scanning → low entropy)</span>
+        <span class="cm"># 特征 2：输入长度的熵（系统性扫描 → 低熵）</span>
         length_counts = collections.Counter(input_lengths)
         total = sum(length_counts.values())
         entropy = -sum((c/total) * math.log2(c/total + <span class="nb">1e-9</span>) <span class="kw">for</span> c <span class="kw">in</span> length_counts.values())
 
-        <span class="cm"># Feature 3 & 4: model confidence statistics</span>
+        <span class="cm"># 特征 3 & 4：模型置信度统计</span>
         conf_mean = np.mean(confidences)
         conf_cv   = np.std(confidences) / conf_mean <span class="kw">if</span> conf_mean > <span class="nb">0</span> <span class="kw">else</span> <span class="nb">0</span>
 
-        <span class="cm"># Feature 5: unique input ratio (close to 1.0 for systematic extraction)</span>
+        <span class="cm"># 特征 5：唯一输入比例（系统性提取时接近 1.0）</span>
         unique_ratio = len(set(input_hashes)) / n
 
         <span class="kw">return</span> np.array([qpm, cv_intervals, entropy, conf_mean, conf_cv, unique_ratio])
 
     <span class="kw">def</span> <span class="fn">record_query</span>(self, user_id: str, timestamp: float, input_length: int,
                        top_confidence: float, input_hash: str):
-        <span class="st">"""Record metadata for a single API query (do not store raw inputs for privacy)."""</span>
+        <span class="st">"""记录单个 API 查询的元数据（为保护隐私不存储原始输入）。"""</span>
         self.user_history[user_id].append({
             <span class="st">"timestamp"</span>:      timestamp,
             <span class="st">"input_length"</span>:   input_length,
@@ -1934,7 +1934,7 @@ PacketTrace = namedtuple(<span class="st">"PacketTrace"</span>, [<span class="st
         })
 
     <span class="kw">def</span> <span class="fn">fit_baseline</span>(self, baseline_user_ids):
-        <span class="st">"""Train the anomaly detector on baseline legitimate user sessions."""</span>
+        <span class="st">"""在基线合法用户会话上训练异常检测器。"""</span>
         features = [self._compute_session_features(uid) <span class="kw">for</span> uid <span class="kw">in</span> baseline_user_ids
                     <span class="kw">if</span> len(self.user_history[uid]) >= <span class="nb">10</span>]
         <span class="kw">if not</span> features:
@@ -1946,9 +1946,9 @@ PacketTrace = namedtuple(<span class="st">"PacketTrace"</span>, [<span class="st
 
     <span class="kw">def</span> <span class="fn">score_user</span>(self, user_id: str) -> float:
         <span class="st">"""
-        Returns anomaly score for a user.
-        Negative score → anomalous (potential extraction).
-        Positive score → normal behavior.
+        返回用户的异常分数。
+        负分数 → 异常（潜在的提取行为）。
+        正分数 → 正常行为。
         """</span>
         <span class="kw">if not</span> self._fitted:
             <span class="kw">raise</span> RuntimeError(<span class="st">"Call fit_baseline() first."</span>)
@@ -1957,76 +1957,76 @@ PacketTrace = namedtuple(<span class="st">"PacketTrace"</span>, [<span class="st
         <span class="kw">return</span> self.detector.decision_function(scaled)[<span class="nb">0</span>]
 
     <span class="kw">def</span> <span class="fn">is_suspicious</span>(self, user_id: str, threshold: float = <span class="nb">0.0</span>) -> bool:
-        <span class="st">"""Returns True if the user's behavior is anomalous above threshold."""</span>
+        <span class="st">"""如果用户的行为异常程度超过阈值，返回 True。"""</span>
         <span class="kw">return</span> self.score_user(user_id) &lt; threshold
 </code></pre>
 
     <div class="callout callout-warn">
-      <strong>False Positive Risk</strong>
-      Automated anomaly-based blocking carries false positive risk for power users,
-      developers testing integrations, and researchers. Detection should trigger
-      enhanced monitoring and throttling before outright blocking, with a human
-      review step for high-value accounts flagged as suspicious.
+      <strong>误报风险</strong>
+      基于自动异常的封禁对高级用户、测试集成的开发人员
+      和研究人员存在误报风险。检测应先触发
+      增强监控和限流，然后再进行完全封禁，并对
+      被标记为可疑的高价值账户设置人工审核步骤。
     </div>
   </section>
 
   <!-- ══════════════════════════════════════════════════════ SECTION 15 ══ -->
   <section class="section" id="s15">
     <span class="section-number">15</span>
-    <h2 id="differential-privacy">Differential Privacy</h2>
+    <h2 id="differential-privacy">差分隐私</h2>
 
     <p>
-      All the defenses discussed so far operate at inference time — after the model has
-      been trained. <strong>Differential privacy (DP)</strong> addresses the root cause by
-      modifying the training process itself to limit how much any individual training example
-      can influence the final model. A differentially private model is formally guaranteed
-      to reveal only bounded information about any single training example — providing
-      provable resistance to membership inference, attribute inference, and training data
-      extraction attacks.
+      到目前为止讨论的所有防御措施都在推理时运作 —
+      即模型训练完成之后。
+      <strong>差分隐私（DP）</strong>通过修改训练过程本身来解决根本原因，
+      限制任何单个训练样本对最终模型的影响程度。差分隐私模型被形式化地保证
+      只揭示关于任何单个训练样本的有界信息 — 提供
+      对成员推理、属性推理和训练数据提取攻击的
+      可证明的抵抗力。
     </p>
 
-    <h3>Formal Definition</h3>
+    <h3>形式化定义</h3>
     <p>
-      A randomized mechanism <em>M</em> is <strong>(ε, δ)-differentially private</strong>
-      if for any two adjacent datasets <em>D</em> and <em>D'</em> (differing in exactly
-      one record), and for any set of outputs <em>S</em>:
+      一个随机化机制 <em>M</em> 是 <strong>(ε, δ)-差分隐私的</strong>，
+      如果对于任意两个相邻数据集 <em>D</em> 和 <em>D'</em>（恰好相差
+      一条记录），以及对于任意输出集合 <em>S</em>：
     </p>
     <p style="font-family: 'Consolas', monospace; background: #f1f5f9; padding: 12px 16px; border-radius: 6px; margin: 12px 0; color: #1e293b;">
       Pr[M(D) ∈ S]  ≤  e<sup>ε</sup> · Pr[M(D') ∈ S]  +  δ
     </p>
     <p>
-      Smaller ε means stronger privacy. When δ = 0 (pure DP), the guarantee is absolute;
-      allowing δ &gt; 0 (approximate DP, typically δ &lt; 1/n) permits slightly relaxed
-      guarantees in exchange for significantly better utility. The <strong>privacy budget</strong>
-      ε tracks total information leakage across all uses of the mechanism — it is consumed
-      with every query, access, or training step, providing a quantitative framework for
-      managing privacy risk over time.
+      更小的 ε 意味着更强的隐私性。当 δ = 0（纯 DP）时，保证是绝对的；
+      允许 δ &gt; 0（近似 DP，通常 δ &lt; 1/n）允许略微放松
+      保证以换取显著更好的效用。<strong>隐私预算</strong>
+      ε 跟踪该机制所有使用中的总信息泄露 — 它随着每次
+      查询、访问或训练步骤而消耗，提供了一个随时间管理隐私风险的
+      量化框架。
     </p>
 
-    <h3>DP-SGD: Training with Differential Privacy</h3>
+    <h3>DP-SGD：使用差分隐私训练</h3>
     <p>
-      <strong>Differentially Private Stochastic Gradient Descent (DP-SGD)</strong>,
-      introduced by Abadi et al. (2016), is the standard mechanism for training neural
-      networks with differential privacy. The algorithm modifies standard SGD in two ways:
+      <strong>差分隐私随机梯度下降（DP-SGD）</strong>，
+      由 Abadi et al. (2016) 提出，是用差分隐私训练神经网络
+      的标准机制。该算法以两种方式修改标准 SGD：
     </p>
     <ol>
-      <li><strong>Gradient clipping</strong>: per-sample gradients are computed individually
-        (rather than averaged over a batch) and clipped to a maximum L2 norm C. This bounds
-        the influence of any single training example on the gradient update.</li>
-      <li><strong>Gaussian noise addition</strong>: Gaussian noise with standard deviation
-        proportional to <code>C × σ</code> is added to the clipped gradient sum before
-        the parameter update, where σ is the noise multiplier calibrated to the desired
-        (ε, δ) budget.</li>
+      <li><strong>梯度裁剪</strong>：每个样本的梯度被单独计算
+        （而不是在批次上平均），并裁剪到最大 L2 范数 C。这限制了
+        任何单个训练样本对梯度更新的影响。</li>
+      <li><strong>高斯噪声添加</strong>：在参数更新之前，
+        将标准差与 <code>C × σ</code> 成比例的
+        高斯噪声添加到裁剪后的梯度求和中，其中 σ 是根据所需
+        (ε, δ) 预算校准的噪声乘数。</li>
     </ol>
     <p>
-      The cost of DP-SGD is a reduction in model accuracy: more noise means less effective
-      gradient signal, especially in early training. The privacy-utility tradeoff is governed
-      by ε: values of ε &lt; 1 provide strong privacy but significant accuracy loss;
-      ε = 1–10 provides moderate privacy with modest accuracy cost (typically 2–5% on
-      classification benchmarks).
+      DP-SGD 的代价是模型准确率的降低：更多噪声意味着梯度信号
+      效果较差，尤其是在训练早期。隐私-效用权衡由 ε 控制：
+      ε &lt; 1 的值提供强隐私性但显著的准确率损失；
+      ε = 1–10 提供中等隐私性，准确率成本适中（通常在分类基准上
+      为 2–5%）。
     </p>
 
-    <h3>Implementation with Opacus</h3>
+    <h3>使用 Opacus 实现</h3>
 
 <pre><code><span class="kw">import</span> torch
 <span class="kw">import</span> torch.nn <span class="kw">as</span> nn
@@ -2041,22 +2041,22 @@ PacketTrace = namedtuple(<span class="st">"PacketTrace"</span>, [<span class="st
     train_loader:    DataLoader,
     optimizer:       torch.optim.Optimizer,
     n_epochs:        int,
-    target_epsilon:  float = <span class="nb">1.0</span>,   <span class="cm"># privacy budget</span>
-    target_delta:    float = <span class="nb">1e-5</span>,  <span class="cm"># failure probability</span>
-    max_grad_norm:   float = <span class="nb">1.0</span>,   <span class="cm"># gradient clipping norm</span>
-    noise_multiplier:float = <span class="nb">1.1</span>,   <span class="cm"># σ: larger → more privacy, less utility</span>
+    target_epsilon:  float = <span class="nb">1.0</span>,   <span class="cm"># 隐私预算</span>
+    target_delta:    float = <span class="nb">1e-5</span>,  <span class="cm"># 失败概率</span>
+    max_grad_norm:   float = <span class="nb">1.0</span>,   <span class="cm"># 梯度裁剪范数</span>
+    noise_multiplier:float = <span class="nb">1.1</span>,   <span class="cm"># σ: 越大 → 越隐私，越少效用</span>
     device:          str   = <span class="st">"cpu"</span>
 ) -> dict:
     <span class="st">"""
-    Train a PyTorch model with (target_epsilon, target_delta)-differential privacy
-    using the Opacus library (meta-pytorch/opacus).
+    使用 Opacus 库 (meta-pytorch/opacus) 以 (target_epsilon, target_delta)-差分隐私
+    训练 PyTorch 模型。
 
-    Returns: dict with final epsilon, delta, and per-epoch losses.
+    返回：包含最终 epsilon、delta 和每 epoch 损失的字典。
     """</span>
     model = model.to(device)
     criterion = nn.CrossEntropyLoss()
 
-    <span class="cm"># Attach the PrivacyEngine to enforce DP during training</span>
+    <span class="cm"># 附加 PrivacyEngine 以在训练期间强制执行 DP</span>
     privacy_engine = PrivacyEngine()
 
     model, optimizer, train_loader = privacy_engine.make_private_with_epsilon(
@@ -2068,7 +2068,7 @@ PacketTrace = namedtuple(<span class="st">"PacketTrace"</span>, [<span class="st
         target_delta=target_delta,
         max_grad_norm=max_grad_norm,
     )
-    <span class="cm"># Equivalent to specifying noise_multiplier directly:</span>
+    <span class="cm"># 等效于直接指定 noise_multiplier：</span>
     <span class="cm"># model, optimizer, train_loader = privacy_engine.make_private(</span>
     <span class="cm">#     module=model, optimizer=optimizer, data_loader=train_loader,</span>
     <span class="cm">#     noise_multiplier=noise_multiplier, max_grad_norm=max_grad_norm,</span>
@@ -2081,7 +2081,7 @@ PacketTrace = namedtuple(<span class="st">"PacketTrace"</span>, [<span class="st
 
         <span class="kw">with</span> BatchMemoryManager(
             data_loader=train_loader,
-            max_physical_batch_size=<span class="nb">64</span>,   <span class="cm"># memory-efficient batching for DP</span>
+            max_physical_batch_size=<span class="nb">64</span>,   <span class="cm"># 针对 DP 的内存高效批处理</span>
             optimizer=optimizer
         ) <span class="kw">as</span> memory_safe_loader:
             <span class="kw">for</span> data, target <span class="kw">in</span> memory_safe_loader:
@@ -2093,7 +2093,7 @@ PacketTrace = namedtuple(<span class="st">"PacketTrace"</span>, [<span class="st
                 optimizer.step()
                 epoch_losses.append(loss.item())
 
-        <span class="cm"># Query current privacy budget spent</span>
+        <span class="cm"># 查询当前已使用的隐私预算</span>
         epsilon = privacy_engine.get_epsilon(target_delta)
         mean_loss = np.mean(epoch_losses)
 
@@ -2109,75 +2109,75 @@ PacketTrace = namedtuple(<span class="st">"PacketTrace"</span>, [<span class="st
     <span class="kw">return</span> {<span class="st">"epsilon"</span>: final_epsilon, <span class="st">"delta"</span>: target_delta, <span class="st">"history"</span>: history}
 
 
-<span class="cm"># ── Privacy-utility tradeoff guide ─────────────────────────────────────</span>
-<span class="cm"># ε ≈ 0.1   : Very strong privacy. Significant accuracy degradation (~10-20%).</span>
-<span class="cm">#             Membership inference reduced to near-random guessing.</span>
-<span class="cm"># ε ≈ 1.0   : Strong privacy. Moderate accuracy degradation (~3-8%).</span>
-<span class="cm">#             Practical for medical / financial datasets.</span>
-<span class="cm"># ε ≈ 10.0  : Moderate privacy. Minimal accuracy degradation (~1-3%).</span>
-<span class="cm">#             Reduces but does not eliminate membership inference risk.</span>
-<span class="cm"># ε > 100   : Weak privacy. Near-original model utility.</span>
-<span class="cm">#             Provides little meaningful protection against determined attackers.</span>
+<span class="cm"># ── 隐私-效用权衡指南 ───────────────────────────────────────────────────</span>
+<span class="cm"># ε ≈ 0.1   : 非常强的隐私性。显著准确率下降（~10-20%）。</span>
+<span class="cm">#             成员推理降至接近随机猜测。</span>
+<span class="cm"># ε ≈ 1.0   : 强隐私性。适度准确率下降（~3-8%）。</span>
+<span class="cm">#             适用于医疗/金融数据集。</span>
+<span class="cm"># ε ≈ 10.0  : 中等隐私性。最小准确率下降（~1-3%）。</span>
+<span class="cm">#             减少但不消除成员推理风险。</span>
+<span class="cm"># ε > 100   : 弱隐私性。接近原始模型效用。</span>
+<span class="cm">#             对坚定的攻击者提供很少有意义的保护。</span>
 </code></pre>
 
-    <h3>Practical Deployment Considerations</h3>
+    <h3>实际部署考虑</h3>
     <p>
-      DP-SGD requires per-sample gradient computation, which is more expensive than
-      standard batched gradient computation — typically 2–3× overhead in memory and
-      1.5–2× in compute time using libraries like <a href="https://opacus.ai/" class="cite">Opacus</a>.
-      Certain layer types (BatchNorm) are incompatible with DP-SGD because they mix
-      cross-sample information; they must be replaced with GroupNorm or LayerNorm.
-      For very large models (LLMs), DP fine-tuning is more practical than DP pretraining
-      from scratch: fine-tuning a pre-trained model with DP requires fewer gradient steps,
-      so the privacy budget is spent more efficiently.
+      DP-SGD 需要每样本梯度计算，这比标准的批处理梯度计算更昂贵 —
+      使用 <a href="https://opacus.ai/" class="cite">Opacus</a> 等库时通常内存开销 2–3 倍，
+      计算时间 1.5–2 倍。
+      某些层类型（BatchNorm）与 DP-SGD 不兼容，因为它们混合了
+      跨样本信息；必须替换为 GroupNorm 或 LayerNorm。
+      对于非常大的模型（LLM），DP 微调比从头开始 DP 预训练更实用：
+      使用 DP 微调预训练模型需要更少的梯度步骤，
+      因此隐私预算使用效率更高。
     </p>
     <p>
-      DP provides formal, quantitative guarantees — not just "we added noise and it seems
-      harder to attack." When a regulator or legal body asks "how private is this model?",
-      a trained model with ε = 1.0, δ = 10<sup>-5</sup> gives a precise, auditable answer.
-      This is a significant advantage over heuristic defenses, and why DP is increasingly
-      required by privacy regulations for sensitive ML deployments.
-      <a class="cite" href="https://opacus.ai/tutorials/">[Opacus Tutorials — Meta AI]</a>
+      DP 提供形式化、量化的保证 — 而不仅仅是"我们添加了噪声，似乎更难
+      攻击。"当监管机构或法律机构问"这个模型有多隐私？"时，
+      一个具有 ε = 1.0, δ = 10<sup>-5</sup> 的训练模型能给出精确、可审计的答案。
+      这是相对于启发式防御的显著优势，也是 DP 越来越被隐私法规要求
+      用于敏感 ML 部署的原因。
+      <a class="cite" href="https://opacus.ai/tutorials/">[Opacus 教程 — Meta AI]</a>
     </p>
 
     <div class="callout callout-tip">
-      <strong>Recommended Reading</strong>
-      For a comprehensive treatment of DP in machine learning, see the
-      <a href="https://opacus.ai/" style="color: #14532d;">Opacus documentation</a> and
+      <strong>推荐阅读</strong>
+      关于 DP 在机器学习中的全面处理，请参见
+      <a href="https://opacus.ai/" style="color: #14532d;">Opacus 文档</a>和
       Abadi et al. (2016), "Deep Learning with Differential Privacy"
-      (<a href="https://arxiv.org/abs/1607.00133" style="color: #14532d;">arXiv:1607.00133</a>).
-      For the privacy-utility tradeoff in LLMs specifically, see Yu et al. (2022),
+      (<a href="https://arxiv.org/abs/1607.00133" style="color: #14532d;">arXiv:1607.00133</a>)。
+      关于 LLM 中隐私-效用权衡的专门讨论，请参见 Yu et al. (2022),
       "Differentially Private Fine-Tuning of Language Models"
-      (<a href="https://arxiv.org/abs/2110.06500" style="color: #14532d;">arXiv:2110.06500</a>).
+      (<a href="https://arxiv.org/abs/2110.06500" style="color: #14532d;">arXiv:2110.06500</a>)。
     </div>
   </section>
 
   <!-- ════════════════════════════════════════════════════════ SUMMARY ══ -->
   <section class="section" style="background: #f8fafc; border: 1.5px solid #c7d2fe;">
-    <h2 style="color: #3730a3; margin-bottom: 16px;" id="module-summary">Module Summary</h2>
+    <h2 style="color: #3730a3; margin-bottom: 16px;" id="module-summary">模块总结</h2>
     <p>
-      This module has covered the full lifecycle of model extraction and inference attacks —
-      from the economics of API-based model cloning, through the technical machinery of
-      shadow models, training data extraction, and side-channel attacks on encrypted traffic,
-      to the defense landscape of rate limiting, DP, watermarking, and anomaly detection.
+      本模块涵盖了模型提取和推理攻击的完整生命周期 —
+      从基于 API 的模型克隆的经济学，到影子模型的技术机制、
+      训练数据提取和针对加密流量的侧信道攻击，
+      再到速率限制、差分隐私、水印和异常检测的防御全景。
     </p>
-    <p>Key takeaways:</p>
+    <p>关键要点：</p>
     <ul>
-      <li><strong>Model extraction</strong> is economically asymmetric: an attacker can clone millions of dollars of training work for thousands of dollars in API queries.</li>
-      <li><strong>Training data extraction</strong> from LLMs is not theoretical — Carlini et al. demonstrated it against GPT-2 and ChatGPT production systems.</li>
-      <li><strong>Membership inference</strong> turns model outputs into a privacy detector, with practical implications for GDPR, HIPAA, and healthcare/financial ML.</li>
-      <li><strong>Side-channel attacks</strong> (Whisper Leak, token length, speculative decoding, KV cache timing) show that HTTPS encryption alone is insufficient for privacy-sensitive LLM deployments.</li>
-      <li><strong>Hardware attacks</strong> (TPUXtract) demonstrate that physical proximity to accelerators can leak architectural secrets without any API access.</li>
-      <li><strong>Differential privacy</strong> is the only defense with formal, quantitative guarantees — at the cost of utility and computational overhead.</li>
-      <li><strong>Layered defenses</strong> (rate limiting + output perturbation + watermarking + DP) are more robust than any single mechanism.</li>
+      <li><strong>模型提取</strong>在经济上是不对称的：攻击者可以用数千美元的 API 查询成本克隆价值数百万美元的训练成果。</li>
+      <li>从 LLM 中<strong>提取训练数据</strong>并非理论问题 — Carlini et al. 在 GPT-2 和 ChatGPT 生产系统上进行了成功演示。</li>
+      <li><strong>成员推理</strong>将模型输出转化为隐私检测器，对 GDPR、HIPAA 以及医疗/金融 ML 具有实际影响。</li>
+      <li><strong>侧信道攻击</strong>（Whisper Leak、令牌长度、推测性解码、KV 缓存时序）表明仅靠 HTTPS 加密对于隐私敏感的 LLM 部署是不够的。</li>
+      <li><strong>硬件攻击</strong>（TPUXtract）表明物理接近加速器可以在没有任何 API 访问的情况下泄露架构秘密。</li>
+      <li><strong>差分隐私</strong>是唯一具有形式化、量化保证的防御 — 以效用和计算开销为代价。</li>
+      <li><strong>分层防御</strong>（速率限制 + 输出扰动 + 水印 + DP）比任何单一机制更鲁棒。</li>
     </ul>
   </section>
 
   <!-- ══════════════════════════════════════════════════════ FOOTER ══ -->
   <footer class="module-footer">
-    <p>AI Security Course — Module 6 &nbsp;|&nbsp; Model Extraction and Inference Attacks</p>
+    <p>AI 安全课程 — 模块 6 &nbsp;|&nbsp; 模型提取与推理攻击</p>
     <p style="margin-top: 8px;">
-      Sources: 
+      来源：
       <a href="https://arxiv.org/abs/2012.07805" style="color: #94a3b8;">Carlini et al. 2021</a> · 
       <a href="https://arxiv.org/pdf/1610.05820" style="color: #94a3b8;">Shokri et al. 2017</a> · 
       <a href="https://arxiv.org/html/2511.03675v1" style="color: #94a3b8;">Whisper Leak 2025</a> · 
@@ -2193,14 +2193,14 @@ PacketTrace = namedtuple(<span class="st">"PacketTrace"</span>, [<span class="st
     </div>
 
     <!-- Previous / Next Navigation -->
-    <nav class="module-bottom-nav" aria-label="Module navigation">
+    <nav class="module-bottom-nav" aria-label="模块导航">
       <a href="./module5.html" class="module-bottom-nav__link module-bottom-nav__link--prev">
-        <span class="module-bottom-nav__label">&larr; Previous</span>
-        <span class="module-bottom-nav__title">Module 5: AI Supply Chain & Infrastructure Attacks</span>
+        <span class="module-bottom-nav__label">&larr; 上一章</span>
+        <span class="module-bottom-nav__title">模块 5：AI 供应链与基础设施攻击</span>
       </a>
       <a href="./module7.html" class="module-bottom-nav__link module-bottom-nav__link--next">
-        <span class="module-bottom-nav__label">Next &rarr;</span>
-        <span class="module-bottom-nav__title">Module 7: Automated AI Red Teaming at Scale</span>
+        <span class="module-bottom-nav__label">下一章 &rarr;</span>
+        <span class="module-bottom-nav__title">模块 7：自动化大规模 AI 红队测试</span>
       </a>
     </nav>
   </article>
@@ -2208,7 +2208,7 @@ PacketTrace = namedtuple(<span class="st">"PacketTrace"</span>, [<span class="st
 </main>
 
 <!-- Back to Top Button -->
-<button class="back-to-top" id="backToTop" aria-label="Back to top">
+<button class="back-to-top" id="backToTop" aria-label="返回顶部">
   <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="18 15 12 9 6 15"/></svg>
 </button>
 
@@ -2216,11 +2216,11 @@ PacketTrace = namedtuple(<span class="st">"PacketTrace"</span>, [<span class="st
 <footer class="module-page-footer" role="contentinfo">
   <div class="module-page-footer__inner">
     <div class="module-page-footer__copyright">
-      Content: CC BY-SA 4.0 &middot; Code: MIT License &middot; 2025 AI Red Team Academy
+      内容：CC BY-SA 4.0 &middot; 代码：MIT 许可证 &middot; 2025 AI 红队学院
     </div>
     <div class="module-page-footer__attribution">
       <a href="https://www.perplexity.ai/computer" target="_blank" rel="noopener noreferrer">
-        Created with Perplexity Computer
+        由 Perplexity Computer 创建
       </a>
     </div>
   </div>
@@ -2239,7 +2239,7 @@ PacketTrace = namedtuple(<span class="st">"PacketTrace"</span>, [<span class="st
 
   function updateToggleIcon() {
     if (!themeToggle) return;
-    themeToggle.setAttribute('aria-label', 'Switch to ' + (theme === 'dark' ? 'light' : 'dark') + ' mode');
+    themeToggle.setAttribute('aria-label', '切换到' + (theme === 'dark' ? '亮色' : '暗色') + '模式');
     themeToggle.innerHTML = theme === 'dark'
       ? '<svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="5"/><path d="M12 1v2M12 21v2M4.22 4.22l1.42 1.42M18.36 18.36l1.42 1.42M1 12h2M21 12h2M4.22 19.78l1.42-1.42M18.36 5.64l1.42-1.42"/></svg>'
       : '<svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/></svg>';
